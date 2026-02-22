@@ -12,10 +12,7 @@
 [![Powered by Lilim](https://img.shields.io/badge/AI-Lilim-8B0000?logo=github)](https://github.com/BlancoBAM/Lilim)
 
 <a href="https://github.com/BlancoBAM/Posessed-Browser/releases/latest">
-  <img src="https://img.shields.io/badge/Download-Windows-0078D4?style=flat&logo=windows&logoColor=white" alt="Download for Windows" />
-</a>
-<a href="https://github.com/BlancoBAM/Posessed-Browser/releases/latest">
-  <img src="https://img.shields.io/badge/Download-Linux-FF4500?style=flat&logo=linux&logoColor=white" alt="Download for Linux" />
+  <img src="https://img.shields.io/badge/Download-Linux_AppImage-FF4500?style=flat&logo=linux&logoColor=white" alt="Download for Linux" />
 </a>
 
 </div>
@@ -93,8 +90,8 @@ Posessed Browser comes pre-installed. Lilim is automatically configured — just
 
 ### On Other Systems
 
-1. **Download** the latest release from [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases)
-2. **Install** — Windows installer or Linux AppImage/DEB
+1. **Download** the latest AppImage release from [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases)
+2. **Make Executable & Run** — `chmod +x Posessed-Browser.AppImage && ./Posessed-Browser.AppImage`
 3. **Import from Chrome** — go to `chrome://settings/importData`
 4. **Configure AI** — go to **Settings → AI Provider** and add your API key, or [set up Ollama](https://ollama.com) for free local models
 5. **Start** — press the **Assistant** button in your toolbar
