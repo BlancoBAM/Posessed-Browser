@@ -1,70 +1,33 @@
 ---
 title: "n8n Integration"
-description: "Build AI workflows that control your browser"
+description: "Use Posessed Browser with n8n for workflow automation"
 ---
 
-Connect Posessed Browser to n8n to build automated workflows. Your n8n AI agents can control the browser—open pages, click buttons, extract data, and fill forms.
+# n8n Integration
 
-## What You Can Build
-
-- **Lead enrichment** — Pull a list of LinkedIn URLs from a spreadsheet and scrape each profile
-- **Price monitoring** — Check product prices hourly and send a Slack alert when they drop
-- **Form automation** — Auto-fill job applications using data from your CRM
-- **Data extraction** — Scrape authenticated pages that require login
-
-## Prerequisites
-
-Before you start:
-- Posessed Browser running with MCP server enabled (Settings → Posessed Browser as MCP)
-- n8n running locally (`npx n8n` or install globally with `npm install -g n8n`)
+[n8n](https://n8n.io) is an open-source workflow automation platform. You can connect Posessed Browser to n8n to trigger browser automation from your n8n workflows.
 
 ## Setup
 
-### 1. Install the MCP community node
+1. Start your n8n instance (self-hosted or cloud)
+2. In Posessed Browser, go to **Settings → App Connector → n8n**
+3. Enter your n8n instance URL and API key
+4. Create a workflow in n8n using the Posessed Browser node
 
-In n8n, go to **Settings → Community Nodes** and install `n8n-nodes-mcp`:
+## What This Enables
 
-<img src="/images/n8n-node.png" alt="Installing n8n-nodes-mcp community node" />
+- Trigger agent tasks from n8n workflows
+- Use browser data as inputs to n8n automation chains
+- Chain browser scraping with other n8n integrations (databases, APIs, email, etc.)
 
-### 2. Create a workflow
-
-Build a workflow with these nodes:
-
-1. Add a **Chat Trigger** node (receives your messages)
-2. Add an **AI Agent** node and connect it to the trigger
-3. Add a **Chat Model** under the AI Agent (e.g., OpenAI, Claude)
-4. Add an **MCP Client Tool** under the AI Agent
-
-<img src="/images/n8n-step3-workflow.png" alt="n8n workflow with AI Agent and MCP Client" />
-
-### 3. Configure the AI Agent
-
-In the AI Agent node, set **Source for Prompt** to **Connected Chat Trigger Node**.
-
-<img src="/images/n8n-step4-agent-prompt.png" alt="AI Agent prompt configuration" />
-
-### 4. Connect to Posessed Browser
-
-Click on the MCP Client node and configure:
-
-- **Endpoint**: Your Posessed Browser MCP URL (find it in Settings → Posessed Browser as MCP)
-- **Server Transport**: `HTTP Streamable`
-
-<img src="/images/n8n-step5-mcp-client.png" alt="MCP Client configuration with Posessed Browser URL" />
-
-### 5. Test it
-
-Save the workflow, click **Open chat**, and try:
+## Example Workflow
 
 ```
-open google.com in Posessed Browser
+Webhook trigger → Posessed Browser (scrape competitor pricing) → Google Sheets (log results) → Email notification
 ```
 
-<img src="/images/n8n-step6-test.png" alt="Testing the workflow" />
+## On Lilith Linux
 
-## Troubleshooting
+n8n can be self-hosted on Lilith Linux alongside Posessed Browser and Lilim, creating a fully local automation stack — no cloud services required.
 
-If the connection fails:
-- Make sure Posessed Browser is running
-- Check that MCP server is enabled in Posessed Browser settings
-- Verify the port number matches your Posessed Browser MCP URL
+For self-hosted n8n setup, see the [n8n documentation](https://docs.n8n.io/hosting/).

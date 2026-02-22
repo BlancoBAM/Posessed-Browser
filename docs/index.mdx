@@ -1,106 +1,119 @@
 ---
 title: "Posessed Browser"
-description: "The open-source AI browser that turns your words into actions"
+description: "Let Lilim posess your browser — the AI-native browser built for Lilith Linux"
 ---
 
-<Frame>
-  <img src="/images/hero-dark.png" alt="Posessed Browser in action" />
-</Frame>
+<div align="center">
+  <img
+    src="/logo/posessed-browser-logo.png"
+    alt="Posessed Browser"
+    width="160"
+  />
+</div>
 
-Posessed Browser is an AI-native browser that lets you automate any web task by describing it in plain English. Built on Chromium, it runs AI agents locally on your machine—keeping your data private while giving you superpowers for browsing.
+# Let Lilim posess your browser.
 
-**Open source. Privacy-first. The browser for the AI era.**
+**Posessed Browser** is an open-source, AI-native Chromium fork — built for and bundled with [Lilith Linux](https://github.com/BlancoBAM/Lilith-Linux). It ships with [Lilim](https://github.com/BlancoBAM/Lilim) as the default AI brain, running entirely on your machine.
+
+No cloud. No subscriptions. No surveillance.
 
 ## Three Ways to Use AI
 
 <Columns cols={3}>
   <Card title="Chat Mode" icon="message">
-    Ask questions about the page you're viewing. Summarize articles, extract data, translate content—without leaving the page.
+    Ask questions about any page you're viewing. Summarize articles, extract
+    data, translate — without leaving the tab.
   </Card>
   <Card title="Agent Mode" icon="robot">
-    Describe a task and watch AI execute it: clicking, typing, navigating. Automate form filling, data extraction, and multi-step workflows.
+    Describe a task and watch Lilim execute it — clicking, typing, navigating,
+    filling forms, extracting data.
   </Card>
   <Card title="Graph Mode" icon="sitemap">
-    Build reliable, repeatable workflows as visual graphs. Edit steps, save, and run anytime. *Coming soon.*
+    Build reliable, repeatable workflows as visual graphs. Edit, save, and run
+    anytime. *Coming soon.*
   </Card>
 </Columns>
 
 ## Quick Start
 
 <Steps>
-  <Step title="Download Posessed Browser">
-    Get the latest release from [github.com/BlancoBAM/Posessed-Browser/releases](https://github.com/BlancoBAM/Posessed-Browser/releases) for macOS, Windows, or Linux.
+  <Step title="On Lilith Linux?">
+    You're already ready. Posessed Browser is pre-installed and Lilim is pre-configured. Just open the browser and use the **Assistant** button.
   </Step>
-  <Step title="Import from Chrome">
-    Navigate to `chrome://settings/importData` and import your bookmarks, passwords, and settings in one click.
+  <Step title="On another OS? Download first">
+    Get the latest release from [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases) for Windows or Linux.
+  </Step>
+  <Step title="Import from Chrome (optional)">
+    Navigate to `chrome://settings/importData` to import your bookmarks, passwords, and settings.
   </Step>
   <Step title="Configure your AI">
-    Posessed Browser includes a default AI model with limited daily usage for testing. For the full experience, bring your own API keys.
+    On Lilith Linux, Lilim is ready automatically. On other systems, choose your AI provider:
 
-    <Card title="Set up your LLM provider" icon="key" href="/features/bring-your-own-llm">
-      Configure Gemini, Claude, OpenAI, or run models locally with Ollama
+    <Card title="Set up your AI provider" icon="key" href="/features/bring-your-own-llm">
+      Use Lilim locally, Ollama, Claude, OpenAI, Gemini, or any compatible provider
     </Card>
+
   </Step>
-  <Step title="Try it out">
-    Open any webpage and press the **Assistant** button in the toolbar. Ask a question about the page, or describe a task to automate.
+  <Step title="Start">
+    Open any webpage and press the **Assistant** button in the toolbar. Describe what you want done.
   </Step>
 </Steps>
 
-## Which AI Model Should I Use?
+## Lilim — Your Default AI
 
-<Tabs>
-  <Tab title="For Chat Mode">
-    **Any model works great**, including local LLMs.
+[Lilim](https://github.com/BlancoBAM/Lilim) is the intelligent AI system built for Lilith Linux. When you run Posessed Browser on Lilith Linux, Lilim handles everything — no API keys, no internet required, no data leaving your machine.
 
-    - **Ollama** or **LM Studio** — Free, runs locally, great for quick questions
-    - **Gemini Flash** — Fast and affordable
-    - **Claude or GPT-4** — Best quality responses
+<Info>
+  As Lilim evolves and Lilith Linux matures, Posessed Browser will automatically
+  improve — expect smarter agents, faster responses, and deeper system
+  integration with every update.
+</Info>
 
-    Chat Mode just needs to understand the page and answer questions—local models handle this well.
-  </Tab>
-  <Tab title="For Agent Mode">
-    **Use Claude Opus 4.5 for best results.**
+## AI Model Options
 
-    | Model | Speed | Quality |
-    |-------|-------|---------|
-    | Claude Opus 4.5 | Slower | Best |
-    | Claude Sonnet 4.5 | Medium | Great |
-    | Claude Haiku 4.5 | Fast | Good |
-    | Gemini Flash | Fast | Good |
+Posessed Browser works with many providers beyond Lilim:
 
-    <Warning>
-    Local LLMs are not yet powerful enough for Agent Mode. The model needs strong reasoning to click the right elements and handle multi-step tasks.
-    </Warning>
-  </Tab>
-</Tabs>
+| Provider                              | Notes                               |
+| ------------------------------------- | ----------------------------------- |
+| **Lilim** _(default on Lilith Linux)_ | Local, no key required              |
+| **Ollama**                            | Free, local — Llama, Mistral, Gemma |
+| **LM Studio**                         | Free, local — any GGUF model        |
+| **Claude** (Anthropic)                | Best for complex agent tasks        |
+| **OpenAI**                            | GPT-4o, o1, o3-mini                 |
+| **Gemini**                            | Flash is fast and affordable        |
+| **Azure / AWS Bedrock**               | Enterprise deployments              |
+| **OpenAI-compatible**                 | Any custom API endpoint             |
 
 ## Why Posessed Browser?
 
 <Columns cols={2}>
+  <Card title="Lilith Linux Native" icon="house">
+    Ships as the default browser. Lilim is pre-configured. Zero setup for Lilith
+    Linux users.
+  </Card>
   <Card title="Privacy-First" icon="shield-check">
-    Run AI locally with Ollama, or bring your own API keys. Your browsing data never leaves your machine unless you choose.
+    AI runs locally. Your browsing history, agent interactions, and data never
+    leave your machine.
   </Card>
   <Card title="Open Source" icon="code-branch">
-    100% open source under AGPL-3.0. Inspect the code, contribute features, or fork it for your needs.
+    100% open source under AGPL-3.0. Inspect it, fork it, contribute to it.
   </Card>
-  <Card title="Works with Your Tools" icon="plug">
-    Built-in MCP servers for Gmail, Calendar, Docs, Sheets, Notion. Connect to Claude Code or Gemini CLI for developer workflows.
-  </Card>
-  <Card title="Chrome Compatible" icon="chrome">
-    All your Chrome extensions work. Import bookmarks, passwords, and settings in one click.
+  <Card title="Chrome-Compatible" icon="chrome">
+    All Chrome extensions work. Import bookmarks and passwords in one click.
   </Card>
 </Columns>
 
 ## Community
 
-<Columns cols={3}>
-  <Card title="Discord" icon="discord" href="https://discord.gg/YKwjt5vuKr">
-    Get help and share feedback
-  </Card>
-  <Card title="GitHub" icon="github" href="https://github.com/BlancoBAM/Posessed-Browser">
+<Columns cols={2}>
+  <Card
+    title="GitHub"
+    icon="github"
+    href="https://github.com/BlancoBAM/Posessed-Browser"
+  >
     Star us and contribute
   </Card>
-  <Card title="Twitter" icon="x-twitter" href="https://x.com/browserOS_ai">
-    Follow for updates
+  <Card title="Lilim AI" icon="robot" href="https://github.com/BlancoBAM/Lilim">
+    The AI system behind Posessed Browser
   </Card>
 </Columns>

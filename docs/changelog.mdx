@@ -3,137 +3,118 @@ title: "Changelog"
 description: "What's new in Posessed Browser"
 ---
 
-All notable changes to Posessed Browser are documented here. For the full release history with download links, see our [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases).
+All notable changes to Posessed Browser are documented here. For download links and full release history, see [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases).
 
 ---
 
 ## v0.39.0
+
 <sub>February 3, 2026</sub>
 
-- **Sync** — Save your browser configuration, agent history, and scheduled tasks across machines. Your setup now follows you wherever you go
-- **App Connector redesign** — Connecting MCP apps is now easier. The new App Connector UI makes it simpler to discover, install, and manage your connected apps
-- **MCP port stability** — Additional fixes for users still experiencing port issues. More reliable connections across restarts
+- **Sync** — Save your browser configuration, agent history, and scheduled tasks across machines
+- **App Connector redesign** — New UI makes it simpler to discover, install, and manage connected MCP apps
+- **MCP port stability** — Additional fixes for users experiencing port issues across restarts
 - **Keyboard shortcuts** — Updated shortcuts to avoid conflicts with European keyboards
-
-<Frame>
-  <img src="/images/changelog/0.39.0-sync-mcp.png" alt="Posessed Browser v0.39.0 featuring Sync and improved MCP connectors" />
-</Frame>
 
 ---
 
 ## v0.38.0
+
 <sub>January 28, 2026</sub>
 
 Bug fix and stability release.
 
-- **MCP port fix on Windows & Linux** — Fixed an issue with MCP port. Port now stays consistent across restarts and made it more reliable
-- **Settings fix** — Fixed `chrome.browser.settings` not working correctly. Settings should now persist and apply as expected
-- **Improved agent** — Made the agent more reliable and performant. General stability fixes across the agent loop
+- **MCP port fix on Windows & Linux** — Port now stays consistent across restarts
+- **Settings fix** — Fixed `chrome.browser.settings` not working correctly
+- **Improved agent** — More reliable and performant agent loop
 
 ---
 
 ## v0.37.0
+
 <sub>January 21, 2026</sub>
 
-- **Workflows** — Build reliable, repeatable browser automations with a visual graph builder. Chat with the workflow agent to define step-by-step automation—ideal for complex tasks where ad-hoc prompts aren't enough. [Read more →](/features/workflows)
-
-<img src="/features/workflow/sample-workflow.png" alt="Workflows visual graph builder showing a data entry automation" />
-
-- **Cowork** — Describe an outcome, step away, and come back to finished work. Combine browser automation with local file operations—research on the web and save reports, scrape data and export to files, all in one task. [Read more →](/features/cowork)
-
-<img src="/features/cowork/cowork-research-example.png" alt="Agent researching Hacker News and generating an HTML report" />
+- **Workflows** — Build reliable, repeatable browser automations with a visual graph builder. [Read more →](/features/workflows)
+- **Cowork** — Combine browser automation with local file operations. Research on the web, save reports to files, all in one task. [Read more →](/features/cowork)
 
 ---
 
 ## v0.36.3
+
 <sub>January 15, 2026</sub>
 
-- **Agent history** — Agent conversations are now saved automatically. View and resume them anytime from the Assistant panel
-
-<img src="/images/changelog/0.36.3/agent-history-highlight.png" alt="Agent history button in the Assistant panel" />
-
-<img src="/images/changelog/0.36.3/agent-history-example.png" alt="Agent history showing past conversations" />
+- **Agent history** — Agent conversations are now saved automatically. View and resume them from the Assistant panel
 
 ---
 
 ## v0.36.2
+
 <sub>January 10, 2026</sub>
 
 Bug fix release focused on MCP stability.
 
-- **MCP server disconnect fix** — Fixed port handling issue causing MCP connections to drop unexpectedly
+- **MCP server disconnect fix** — Fixed port handling causing MCP connections to drop
 
 ---
 
 ## v0.36.0
+
 <sub>January 8, 2026</sub>
 
-- **Agent personalization** — Add your own prompts to personalize the agent. Tweak its behavior, adjust how it responds, set your preferred formatting, and more
-- **Toolbar customization** — Hide the Hub chat and labels from the settings page to declutter your toolbar
-- **MCP server port stability** — The port now stays consistent through browser restarts, so you don't have to keep updating your MCP clients
-- **Fixed agent install/update issues** — The agent now handles installs and updates more proactively
+- **Agent personalization** — Add custom prompts to personalize agent behavior
+- **Toolbar customization** — Hide Hub chat and labels from settings to declutter
+- **MCP server port stability** — Port stays consistent through browser restarts
+- **Fixed agent install/update issues** — More proactive install and update handling
 
 ---
 
 ## v0.35.0
+
 <sub>December 25, 2025</sub>
 
-- **Agent stability fixes** — Fixed bugs to make the agent loop much more reliable
-- **Gemini 3 support** — Gemini 3 now supported through OpenRouter and Google adapters
-- **Better error surfacing** — Error messages are now clearer
+- **Agent stability fixes** — Major reliability improvements to the agent loop
+- **Gemini 3 support** — Supported through OpenRouter and Google adapters
+- **Better error surfacing** — Clearer error messages throughout
 
 ---
 
 ## v0.34.0
+
 <sub>December 20, 2025</sub>
 
-- **Third-party MCP server support** — Connect external MCP servers like Google Calendar, Notion, Google Docs, Gmail, and more. You can also connect your own custom MCP servers
-- **Gemini 3 support** — Gemini 3 Pro and Flash models now work with Posessed Browser
-- **Windows icon fix** — The Windows icon now displays Posessed Browser logo correctly
+- **Third-party MCP server support** — Connect Google Calendar, Notion, Gmail, and custom MCP servers
+- **Gemini 3 support** — Gemini 3 Pro and Flash models now work
 - **Agent & UI improvements** — Various agent loop fixes and UI polish
 
 ---
 
 ## v0.33.0
+
 <sub>December 18, 2025</sub>
 
 - **OpenAI-compatible provider support** — Connect any OpenAI-compatible API endpoint
-- **Multi-window & multi-profile agent support** — Agent now works across multiple windows and browser profiles
-- **MCP server reliability** — Fixed connection drops and improved stability
-- **Agent reliability improvements** — General stability fixes
+- **Multi-window & multi-profile agent support** — Agent now works across multiple windows and profiles
+- **MCP server reliability** — Fixed connection drops
 
 ---
 
 ## v0.32.0
+
 <sub>December 12, 2025</sub>
 
-A complete revamp of Posessed Browser.
+A complete revamp.
 
-**New features:**
-- **New Agent** — Completely rebuilt agent: faster, smarter, and more reliable
+- **New Agent** — Completely rebuilt: faster, smarter, more reliable
 - **Agent Per Tab** — Run multiple agents in different tabs simultaneously
-- **Polished UI** — Fresh, cleaner interface design
+- **Polished UI** — Fresh, cleaner interface
 - **Manifest V2 Support** — Ad blockers like uBlock Origin work again
 - **Native Split View** — Work on two things side by side
 - **Chromium 142** — Updated to Chromium 142.0.7444.49
-- **Azure & AWS Bedrock** — Native support for Azure OpenAI and AWS Bedrock models
-
-**Breaking changes:**
-- Old agent will stop working — update required
-- LLM provider settings won't carry over — reconfiguration needed
-
----
-
-## v0.30.0
-<sub>November 14, 2025</sub>
-
-- **Better text extraction** — Improved copy button in LLM Chat
-- **MCP server stability** — Improved connection reliability
-- **UI cleanup** — Unpinned extensions for cleaner look
-- **Third-party MCP fixes** — Fixed support for third-party MCP servers
+- **Azure & AWS Bedrock** — Native support added
 
 ---
 
 <Note>
-For older releases, see the [full release history on GitHub](https://github.com/BlancoBAM/Posessed-Browser/releases).
+  For older releases, see the [full release history on
+  GitHub](https://github.com/BlancoBAM/Posessed-Browser/releases).
 </Note>

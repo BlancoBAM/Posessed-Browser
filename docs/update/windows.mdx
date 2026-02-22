@@ -1,46 +1,20 @@
 ---
-title: "Update on Windows"
+title: "Updating on Windows"
 description: "How to update Posessed Browser on Windows"
 ---
 
-<Steps>
-  <Step title="Check for updates">
-    Click the **Posessed Browser Feedback** extension (bug icon) in the toolbar, then click **Check for Updates**.
+# Updating on Windows
 
-    <Frame>
-      <img src="/images/check-for-updates.png" alt="Posessed Browser Feedback extension showing Check for Updates button" />
-    </Frame>
-  </Step>
+## Auto-Update
 
-  <Step title="Download the latest version">
-    Download the Windows installer from [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases).
-  </Step>
+Posessed Browser checks for updates automatically. When one is available, you'll see a notification in the browser. Click **Relaunch to update** to apply it.
 
-  <Step title="Run the installer">
-    Double-click the downloaded installer to start the update. You'll see a temporary folder appear — this is normal and expected on Windows.
+## Manual Update
 
-    <Frame>
-      <img src="/images/windows-installation/windows-installation-installer-tmp-folder.png" alt="Temporary folder created by the installer" />
-    </Frame>
+1. Download the latest installer from [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases)
+2. Run `Posessed-Browser_installer.exe`
+3. The installer will update the existing installation in place
 
-    Wait about 30–40 seconds. The temporary folder will disappear on its own, and the updated **Posessed Browser** app will automatically appear on your desktop.
+## Checking Your Version
 
-    <Frame>
-      <img src="/images/windows-installation/windows-installation-app-on-desktop.jpeg" alt="Posessed Browser app appears on the desktop after installation" />
-    </Frame>
-
-    <Note>If Posessed Browser was already running, close it completely and reopen it for the update to take effect.</Note>
-  </Step>
-
-  <Step title="Allow the Posessed Browser Agent">
-    When Posessed Browser opens, you may see a popup asking to allow **Posessed Browser Agent** to access the network. Click **Allow** — the agent runs as a separate process alongside the browser and needs this permission to work.
-
-    <Frame>
-      <img src="/images/windows-installation/windows-installation-allow-browseros-agent.png" alt="Allow Posessed Browser Agent network access prompt" />
-    </Frame>
-
-    <Warning>If you click Cancel, the agent won't be able to connect and you'll see a "Failed to Fetch" error. If this happens, go to **Windows Security → Allow an app through your network settings** and enable **Posessed Browser Agent**.</Warning>
-  </Step>
-</Steps>
-
-Your settings and data will be preserved after the update.
+Navigate to `chrome://settings/help` in Posessed Browser.

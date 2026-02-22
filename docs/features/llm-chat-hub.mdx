@@ -1,68 +1,34 @@
 ---
-title: "Chat & Hub"
-description: "Access ChatGPT, Claude, and Gemini from any webpage with one click"
+title: "LLM Chat Hub"
+description: "Compare multiple AI models side-by-side on any page"
 ---
 
-Posessed Browser puts AI chat at your fingertips. Open a chat panel on any webpage to ask questions with full page context, or compare responses across multiple LLMs side-by-side.
+# LLM Chat Hub
 
-Watch the chat panel and LLM Hub in action:
+The LLM Chat Hub lets you chat with multiple AI models simultaneously — compare their responses side-by-side directly within your browser.
 
-<video
-  controls
-  className="w-full aspect-video rounded-xl"
-  src="https://pub-80f8a01e6e8b4239ae53a7652ef85877.r2.dev/resources/feature-videos/2-llm-chat-hub.mp4"
-></video>
+## How to Use
 
-## LLM Chat
+1. Click the **Hub** icon in the toolbar
+2. Select two or more AI providers to compare
+3. Type your prompt once and see all responses simultaneously
 
-Click the **Chat** button in the toolbar (or press `Option+K`) to open an AI chat panel on any webpage.
+## Use Cases
 
-<img src="/images/features--llm-chat-panel.png" alt="LLM Chat panel open on a webpage" />
+- Compare Claude vs Gemini vs GPT-4o on the same question
+- Find which model gives the best answer for your specific task
+- Test prompts across providers before committing to one
 
-### Features
+## Supported Providers
 
-- **Switch providers instantly** — Use the dropdown or press `Option+L` to cycle between Claude, ChatGPT, and Gemini
-- **Copy page context** — Grab the current webpage content to paste into your prompt
-- **Screenshot and attach** — Capture the visible page as an image for visual questions
-- **Works everywhere** — The panel stays open as you browse
+All providers configured in your **Settings → AI Provider** are available in the Hub:
 
-### Toolbar Buttons
+- **Lilim** (on Lilith Linux — local, no cost)
+- Ollama / LM Studio (local)
+- Claude, OpenAI, Gemini (cloud, requires API key)
+- Any OpenAI-compatible endpoint
 
-<img src="/images/features--llm-chat-toolbar.png" alt="LLM Chat toolbar buttons" />
+## Tips
 
-| Icon | Action |
-|------|--------|
-| Copy | Copy webpage content to clipboard |
-| Image | Screenshot webpage and copy |
-| Refresh | Reset LLM chat |
-| External | Open LLM in new tab |
-| Menu | Additional options + Popout LLM Hub |
-
-### Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| `Option+K` | Toggle chat panel |
-| `Option+L` | Switch to next provider |
-
-## LLM Hub (Clash of GPTs)
-
-Click the **Hub** button in the toolbar (or press `Cmd+Shift+U`) to open a multi-pane comparison window.
-
-<img src="/images/features--llm-hub.png" alt="LLM Hub with three panes showing Claude, Gemini, and ChatGPT" />
-
-The Hub lets you query multiple LLMs simultaneously:
-
-1. Choose 1, 2, or 3 panes using the panel selector in the top-right
-2. Select which LLM to use in each pane (Claude, Gemini, or ChatGPT)
-3. Paste your prompt into each pane and compare responses
-
-This is useful when you want an "LLM council" — get multiple perspectives on a question and see where the models agree or differ.
-
-## Customization
-
-Control which buttons appear in your toolbar from **Settings → Customization**:
-
-- **Show Chat Button** — Display the Chat button in the toolbar
-- **Show Hub Button** — Display the Hub button in the toolbar
-- **Show Button Labels** — Display text labels next to toolbar icons
+- Use Chat Hub to find which model works best for your use case, then set that as your default
+- For Lilith Linux users, compare Lilim against cloud models to gauge how it performs on your specific tasks — as Lilim improves, you may be able to drop your cloud subscriptions entirely

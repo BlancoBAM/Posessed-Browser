@@ -1,67 +1,34 @@
 ---
 title: "Scheduled Tasks"
-description: "Run the Posessed Browser agent automatically on a schedule"
+description: "Run AI agents automatically on a schedule"
 ---
 
-Scheduled Tasks let you run the Posessed Browser agent automatically—daily, every few hours, or every few minutes. You get the full power of the agent running on autopilot.
+# Scheduled Tasks
 
-Watch how to set up a scheduled task from scratch:
+Scheduled Tasks let you run any agent task automatically — daily, hourly, or every few minutes. Set it up once and let Posessed Browser handle it on autopilot.
 
-<video
-  controls
-  className="w-full aspect-video rounded-xl"
-  src="https://pub-80f8a01e6e8b4239ae53a7652ef85877.r2.dev/resources/feature-videos/5-scheduled-tasks.mp4"
-></video>
+## Setting Up a Scheduled Task
 
-## Creating a Scheduled Task
-
-1. Go to **Settings → Scheduled Tasks**
-2. Click **Create Task**
-3. Fill in the details:
-   - **Name** — A friendly name for your task
-   - **Prompt** — What you want the agent to do
-   - **Schedule** — Daily at a specific time, every N hours, or every N minutes
-4. Click **Create**
-
-<img src="/images/features--scheduled-tasks-create.png" alt="Create scheduled task dialog" />
+1. Open the **Assistant** panel (click the toolbar button or press `Ctrl+B`)
+2. Go to **Scheduled Tasks** in the sidebar
+3. Click **New Task**
+4. Write your agent prompt
+5. Set your schedule (interval or cron-style)
+6. Enable and save
 
 ## Example Use Cases
 
-**Morning briefing**
-> Every morning at 8am, check my Google Calendar and send me a summary of today's events. For each meeting, do a quick Google search on the attendees and include their LinkedIn summary.
-
-**LinkedIn automation**
-> Every day, go to LinkedIn and accept up to 25 pending connection requests.
-
-**Price monitoring**
-> Check the price of this Amazon item every hour. If it drops below $50, place the order.
-
-## Viewing Results
-
-When a scheduled task runs, you can see the results in two places:
-
-- **New Tab page** — Results show up right on your new tab
-- **Settings → Scheduled Tasks** — View the full run history for each task
-
-<img src="/images/features--scheduled-tasks-results.png" alt="Scheduled task results" />
-
-Click **View** on any task run to see the full output:
-
-<img src="/images/features--scheduled-tasks-output.png" alt="Scheduled task output showing a daily news briefing" />
+- **Daily briefing** — _"Go to my favorite news sites and summarize the top 5 stories"_
+- **Price monitoring** — _"Check whether this product is under $50 on Amazon"_
+- **Form submissions** — _"Fill and submit my weekly timesheet"_
+- **Data collection** — _"Extract today's metrics from my analytics dashboard and save to a file"_
 
 ## How It Works
 
-Scheduled tasks run in a background window, so they don't interrupt whatever you're working on. You won't even notice them running.
+The agent runs in the background using the same AI engine as Agent Mode. On Lilith Linux, this is **[Lilim](https://github.com/BlancoBAM/Lilim)** — running locally, no cloud required.
 
-<Note>
-Posessed Browser needs to be open for scheduled tasks to run. If your laptop was closed or Posessed Browser wasn't running at the scheduled time, the task will run as soon as you open Posessed Browser again.
-</Note>
+## Notes
 
-## Pro Tip: Complex Prompts with MCPs
-
-Your scheduled task prompts can be as complex as you want. If you connect MCP servers (like Google Calendar, Slack, Notion, or Gmail), you can create powerful automated workflows.
-
-For example:
-> Check my Google Calendar for tomorrow's meetings, then post a summary to my Slack channel, and create a Notion page with prep notes for each meeting.
-
-See [Connect to MCPs](/features/connect-mcps) to set up your integrations.
+- Tasks run only while the browser is open
+- Results are saved to Agent History and optionally to a local file (via [Cowork](/features/cowork))
+- Complex tasks work best with Lilim or a capable cloud model

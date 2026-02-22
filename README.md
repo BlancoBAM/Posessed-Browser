@@ -1,152 +1,185 @@
 <div align="center">
 <img width="300" alt="Posessed Browser Logo" src="docs/logo/posessed-browser-logo.png" />
 
-<br></br>
+# Posessed Browser
+
+### _Let Lilim posess your browser._
+
+**An open-source, AI-native Chromium fork — built for and bundled with [Lilith Linux](https://github.com/BlancoBAM/Lilith-Linux).**
+
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](LICENSE)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Posessed--Browser-FF4500?logo=github)](https://github.com/BlancoBAM/Posessed-Browser)
-<br></br>
-<a href="https://github.com/BlancoBAM/Posessed-Browser/releases/download/latest/Posessed-Browser.dmg">
-<img src="https://img.shields.io/badge/Download-macOS-black?style=flat&logo=apple&logoColor=white" alt="Download for macOS (beta)" />
+[![GitHub Releases](https://img.shields.io/github/v/release/BlancoBAM/Posessed-Browser?color=FF4500)](https://github.com/BlancoBAM/Posessed-Browser/releases)
+[![Powered by Lilim](https://img.shields.io/badge/AI-Lilim-8B0000?logo=github)](https://github.com/BlancoBAM/Lilim)
+
+<a href="https://github.com/BlancoBAM/Posessed-Browser/releases/latest">
+  <img src="https://img.shields.io/badge/Download-Windows-0078D4?style=flat&logo=windows&logoColor=white" alt="Download for Windows" />
 </a>
-<a href="https://github.com/BlancoBAM/Posessed-Browser/releases/download/latest/Posessed-Browser_installer.exe">
-<img src="https://img.shields.io/badge/Download-Windows-0078D4?style=flat&logo=windows&logoColor=white" alt="Download for Windows (beta)" />
+<a href="https://github.com/BlancoBAM/Posessed-Browser/releases/latest">
+  <img src="https://img.shields.io/badge/Download-Linux-FF4500?style=flat&logo=linux&logoColor=white" alt="Download for Linux" />
 </a>
-<a href="https://github.com/BlancoBAM/Posessed-Browser/releases/download/latest/Posessed-Browser.AppImage">
-<img src="https://img.shields.io/badge/Download-Linux-FCC624?style=flat&logo=linux&logoColor=black" alt="Download for Linux (beta)" />
-</a>
-<a href="https://github.com/BlancoBAM/Posessed-Browser/releases/download/latest/Posessed-Browser.deb">
-<img src="https://img.shields.io/badge/Download-Debian-D70A53?style=flat&logo=debian&logoColor=white" alt="Download Debian package" />
-</a>
-<br />
 
 </div>
 
-##
+---
 
-🌐 Posessed Browser is an open-source Chromium fork that runs AI agents natively. **The privacy-first alternative to ChatGPT Atlas, Perplexity Comet, and Dia.**
+## Overview
 
-🔒 Use your own API keys or run local models with Ollama. Your data never leaves your machine.
+**Posessed Browser** is a Chromium fork with native AI agents baked in. It ships as the default browser of [Lilith Linux](https://github.com/BlancoBAM/Lilith-Linux), tightly integrated with [Lilim](https://github.com/BlancoBAM/Lilim) — an intelligent, locally-run AI system designed for the Lilith Linux ecosystem.
 
-💡 Join our [Discord](https://discord.gg/YKwjt5vuKr) or [Slack](https://dub.sh/browserOS-slack) and help us build! Have feature requests? [Suggest here](https://github.com/BlancoBAM/Posessed-Browser/issues/99).
+No cloud dependency. No subscriptions. Your data stays on your machine.
 
-## Quick start
+> **"Let Lilim posess your browser."**
+> Lilim is the default AI brain — running locally, knowing your system, acting on your behalf.
 
-1. Download and install Posessed Browser:
-   - [macOS](https://github.com/BlancoBAM/Posessed-Browser/releases/download/latest/Posessed-Browser.dmg)
-   - [Windows](https://github.com/BlancoBAM/Posessed-Browser/releases/download/latest/Posessed-Browser_installer.exe)
-   - [Linux (AppImage)](https://github.com/BlancoBAM/Posessed-Browser/releases/download/latest/Posessed-Browser.AppImage)
-   - [Linux (Debian)](https://github.com/BlancoBAM/Posessed-Browser/releases/download/latest/Posessed-Browser.deb)
+---
 
-2. Import your Chrome data (optional)
+## Features
 
-3. Connect your AI provider — use Claude, OpenAI, Gemini, or local models via Ollama and LMStudio.
+| Feature                  | Description                                                              |
+| ------------------------ | ------------------------------------------------------------------------ |
+| 🧠 **Lilim Integration** | Powered by the Lilim AI system from Lilith Linux — runs 100% locally     |
+| 🤖 **AI Agents**         | Describe any web task in plain English and watch it execute              |
+| 🔒 **Privacy-First**     | No telemetry, no cloud processing, no data collection                    |
+| 🔄 **Workflows**         | Build visual, repeatable browser automations                             |
+| 📂 **Cowork**            | Combine browser automation with local file operations                    |
+| ⏰ **Scheduled Tasks**   | Run agents on autopilot — daily, hourly, or every few minutes            |
+| 💬 **LLM Hub**           | Compare multiple AI models side-by-side on any page                      |
+| 🛡️ **Ad Blocker**        | Built-in uBlock Origin with Manifest V2 support                          |
+| 🔌 **MCP Server**        | Control your browser from `claude-code`, `gemini-cli`, or any MCP client |
+| ⚙️ **Chrome-Compatible** | All your extensions work. Import bookmarks and passwords in one click    |
 
-4. Start automating!
+---
 
-## What makes Posessed Browser special
+## Lilim — The Default AI
 
-- 🏠 Feels like home — same Chrome interface, all your extensions just work
-- 🤖 AI agents that run on YOUR browser, not in the cloud
-- 🔒 Privacy first — bring your own keys or run local models with Ollama. Your browsing history stays on your machine
-- 🤝 [Posessed Browser as MCP server](https://github.com/BlancoBAM/Posessed-Browser/blob/main/docs/features/use-with-claude-code) — control the browser from `claude-code`, `gemini-cli`, or any MCP client (31 tools)
-- 🔄 [Workflows](https://github.com/BlancoBAM/Posessed-Browser/blob/main/docs/features/workflows) — build repeatable browser automations with a visual graph builder
-- 📂 [Cowork](https://github.com/BlancoBAM/Posessed-Browser/blob/main/docs/features/cowork) — combine browser automation with local file operations. Research the web, save reports to your folder
-- ⏰ [Scheduled Tasks](https://github.com/BlancoBAM/Posessed-Browser/blob/main/docs/features/scheduled-tasks) — run the agent on autopilot, daily or every few minutes
-- 💬 [LLM Hub](https://github.com/BlancoBAM/Posessed-Browser/blob/main/docs/features/llm-chat-hub) — compare Claude, ChatGPT, and Gemini side-by-side on any page
-- 🛡️ Built-in ad blocker — [10x more protection than Chrome](https://github.com/BlancoBAM/Posessed-Browser/blob/main/docs/features/ad-blocking) with uBlock Origin + Manifest V2 support
-- 🚀 100% open source under AGPL-3.0
+Posessed Browser ships with **[Lilim](https://github.com/BlancoBAM/Lilim)** as its default AI provider, no API key required when running on Lilith Linux.
 
-## Demos
+Lilim is a locally-run intelligent assistant built specifically for the Lilith Linux environment. It handles:
 
-### 🤖 Posessed Browser agent in action
+- Browser automation and agent tasks
+- Page summarization and chat
+- Multi-step workflows
+- System-aware operations (file access, terminal, search)
 
-[![Posessed Browser agent in action](docs/videos/browserOS-agent-in-action.gif)](https://www.youtube.com/watch?v=SoSFev5R5dI)
-<br/><br/>
+> As Lilim evolves and Lilith Linux matures, Posessed Browser will automatically improve — deeper integrations, smarter agents, and faster responses are on the roadmap.
 
-### 🎇 Install [Posessed Browser as MCP](https://github.com/BlancoBAM/Posessed-Browser/blob/main/docs/features/use-with-claude-code) and control it from `claude-code`
+---
 
-https://github.com/user-attachments/assets/c725d6df-1a0d-40eb-a125-ea009bf664dc
+## AI Model Options
 
-<br/><br/>
+Posessed Browser supports multiple AI providers. Pick the one that works for you:
 
-### 💬 Use Posessed Browser to chat
+| Provider              | Models                        | Notes                                       |
+| --------------------- | ----------------------------- | ------------------------------------------- |
+| **Lilim** _(default)_ | Lilim (local)                 | Bundled with Lilith Linux — no key required |
+| **Ollama**            | Llama 3, Mistral, Gemma, etc. | Free, runs locally                          |
+| **LM Studio**         | Any GGUF model                | Free, runs locally                          |
+| **Claude**            | Opus, Sonnet, Haiku           | Best for agentic tasks                      |
+| **OpenAI**            | GPT-4o, o1, o3-mini           | Widely supported                            |
+| **Gemini**            | Flash, Pro                    | Fast and affordable                         |
+| **Azure OpenAI**      | GPT-4o via Azure              | Enterprise option                           |
+| **AWS Bedrock**       | Claude on Bedrock             | Enterprise option                           |
+| **OpenAI-Compatible** | Any endpoint                  | Custom API servers                          |
 
-https://github.com/user-attachments/assets/726803c5-8e36-420e-8694-c63a2607beca
+Configure your provider from the browser's **Settings → AI Provider** page.
 
-<br/><br/>
+---
 
-### ⚡ Use Posessed Browser to scrape data
+## Quick Start
 
-https://github.com/user-attachments/assets/9f038216-bc24-4555-abf1-af2adcb7ebc0
+### On Lilith Linux
 
-<br/><br/>
+Posessed Browser comes pre-installed. Lilim is automatically configured — just open the browser and start using AI features immediately.
 
-## Why We're Building Posessed Browser
+### On Other Systems
 
-For the first time since Netscape pioneered the web in 1994, AI gives us the chance to completely reimagine the browser. We've seen tools like Cursor deliver 10x productivity gains for developers—yet everyday browsing remains frustratingly archaic.
+1. **Download** the latest release from [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases)
+2. **Install** — Windows installer or Linux AppImage/DEB
+3. **Import from Chrome** — go to `chrome://settings/importData`
+4. **Configure AI** — go to **Settings → AI Provider** and add your API key, or [set up Ollama](https://ollama.com) for free local models
+5. **Start** — press the **Assistant** button in your toolbar
 
-You're likely juggling 70+ tabs, battling your browser instead of having it assist you. Routine tasks, like ordering something from amazon or filling a form should be handled seamlessly by AI agents.
+---
 
-At Posessed Browser, we're convinced that AI should empower you by automating tasks locally and securely—keeping your data private. We are building the best browser for this future!
+## Why Posessed Browser?
 
-## How we compare
+> _"For the first time since Netscape, AI gives us the chance to completely reimagine the browser."_
 
-<details>
-<summary><b>vs Chrome</b></summary>
-<br>
-While we're grateful for Google open-sourcing Chromium, but Chrome hasn't evolved much in 10 years. No AI features, no automation, no MCP support.
-</details>
+Most browsers haven't changed fundamentally in a decade. Posessed Browser is built for the AI era:
 
-<details>
-<summary><b>vs Brave</b></summary>
-<br>
-We love what Brave started, but they've spread themselves too thin with crypto, search, VPNs. We're laser-focused on AI-powered browsing.
-</details>
+- **You juggle 70+ tabs** — Posessed Browser gives you an agent to handle the tedious ones
+- **Routine tasks are automated** — form fills, data extraction, research, scheduling
+- **Your data is yours** — everything runs locally; nothing is sent to our servers
+- **Open source** — inspect it, fork it, trust it
 
-<details>
-<summary><b>vs Arc/Dia</b></summary>
-<br>
-Many loved Arc, but it was closed source. When they abandoned users, there was no recourse. We're 100% open source - fork it anytime!
-</details>
+---
 
-<details>
-<summary><b>vs Perplexity Comet</b></summary>
-<br>
-They're a search/ad company. Your browser history becomes their product. We keep everything local.
-</details>
+## For Lilith Linux Users
 
-<details>
-<summary><b>vs ChatGPT Atlas</b></summary>
-<br>
-Your browsing data could be used for ads or to train their models. We keep your history and agent interactions strictly local.
-</details>
+Posessed Browser is a **first-class citizen** of the Lilith Linux ecosystem:
+
+- Ships as the **default browser** in Lilith Linux
+- **Lilim is pre-configured** — no setup required
+- **System-aware** — Lilim can access your filesystem, terminal, and system state
+- **In Lilith Linux's official repos** — system updates (`apt upgrade`) deliver the latest Posessed Browser. Standalone releases are also published independently on [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases)
+
+As Lilim and Lilith Linux grow, expect Posessed Browser to grow with them:
+
+- Smarter, faster local inference
+- Deeper system integration
+- More powerful agentic capabilities
+
+---
 
 ## Contributing
 
-We'd love your help making Posessed Browser better!
+Built on Chromium, Posessed Browser has two areas to contribute to:
 
-- 🐛 [Report bugs](https://github.com/BlancoBAM/Posessed-Browser/issues)
-- 💡 [Suggest features](https://github.com/BlancoBAM/Posessed-Browser/issues/99)
-- 💬 [Join Discord](https://discord.gg/YKwjt5vuKr)
-- 🐦 [Follow on Twitter](https://x.com/browserOS_ai)
+- **Agent** — AI features, UI, and browser automation (`TypeScript/React`)
+- **Browser** — Chromium patches and build system (`C++/Python`)
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full setup instructions.
+
+Quick links:
+
+- 🐛 [Report a bug](https://github.com/BlancoBAM/Posessed-Browser/issues)
+- 💡 [Request a feature](https://github.com/BlancoBAM/Posessed-Browser/issues)
+- 🔀 [Open a pull request](https://github.com/BlancoBAM/Posessed-Browser/pulls)
+
+---
+
+## Architecture
+
+```
+Posessed Browser
+├── packages/
+│   ├── browseros/              # Chromium build system & patches
+│   └── browseros-agent/        # AI agent Chrome extension
+├── docs/                       # Documentation
+└── README.md
+```
+
+The AI agent runs as a Chrome extension, with a local Bun server handling the agent loop, MCP tool calls, and API communication. On Lilith Linux, this connects directly to the local Lilim backend.
+
+---
+
+## Credits
+
+- **[Lilim](https://github.com/BlancoBAM/Lilim)** — The AI backbone powering Posessed Browser on Lilith Linux
+- **[Lilith Linux](https://github.com/BlancoBAM/Lilith-Linux)** — The OS this browser calls home
+- **[ungoogled-chromium](https://github.com/ungoogled-software/ungoogled-chromium)** — Privacy patches
+- **[The Chromium Project](https://www.chromium.org/)** — The foundation everything is built on
+
+---
 
 ## License
 
 Posessed Browser is open source under the [AGPL-3.0 license](LICENSE).
 
-## Credits
-
-- [ungoogled-chromium](https://github.com/ungoogled-software/ungoogled-chromium) - Posessed Browser uses some patches for enhanced privacy. Thanks to everyone behind this project!
-- [The Chromium Project](https://www.chromium.org/) - At the core of Posessed Browser, making it possible to exist in the first place.
-
-## Stargazers
-
-Thank you to all our supporters!
-
-[![Star History Chart](https://api.star-history.com/svg?repos=BlancoBAM/Posessed-Browser&type=Date)](https://www.star-history.com/#BlancoBAM/Posessed-Browser&Date)
-
-##
+---
 
 <p align="center">
-Built with ❤️ from San Francisco
+  <img width="120" alt="Posessed Browser Logo" src="docs/logo/posessed-browser-logo.png" />
+  <br/>
+  <i>Let Lilim posess your browser.</i>
 </p>

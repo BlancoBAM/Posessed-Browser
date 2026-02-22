@@ -1,18 +1,48 @@
 ---
-title: "Update Posessed Browser"
-description: "How to update to the latest version of Posessed Browser"
+title: "Updating Posessed Browser"
+description: "How to update Posessed Browser on Windows and Linux"
 ---
 
-Select your platform for step-by-step update instructions:
+# Updating Posessed Browser
 
-<CardGroup cols={3}>
-  <Card title="macOS" icon="apple" href="/update/macos">
-    Auto-updates with manual option
-  </Card>
-  <Card title="Windows" icon="windows" href="/update/windows">
-    Download and install the latest version
-  </Card>
-  <Card title="Linux" icon="linux" href="/update/linux">
-    Download and replace the binary
-  </Card>
-</CardGroup>
+## Linux
+
+<Steps>
+  <Step title="On Lilith Linux">
+    Posessed Browser is in the **official Lilith Linux repositories**. System updates include the latest browser:
+
+    ```bash
+    sudo apt update && sudo apt upgrade
+    ```
+
+    Releases are also published independently to [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases) and can be installed separately from a system update.
+
+  </Step>
+  <Step title="AppImage">
+    Download the latest `Posessed-Browser.AppImage` from [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases) and replace the existing file.
+  </Step>
+  <Step title="DEB package">
+    ```bash
+    wget https://github.com/BlancoBAM/Posessed-Browser/releases/latest/download/Posessed-Browser.deb
+    sudo dpkg -i Posessed-Browser.deb
+    ```
+  </Step>
+</Steps>
+
+## Windows
+
+<Steps>
+  <Step title="Auto-update (if enabled)">
+    Posessed Browser will notify you when an update is available. Click
+    **Update** in the notification.
+  </Step>
+  <Step title="Manual update">
+    Download the latest installer from [GitHub
+    Releases](https://github.com/BlancoBAM/Posessed-Browser/releases) and run
+    `Posessed-Browser_installer.exe`. It will update in place.
+  </Step>
+</Steps>
+
+## Checking Your Version
+
+Go to `chrome://settings/help` or look in **Settings → About Posessed Browser** to see your current version.

@@ -1,144 +1,65 @@
 ---
-title: "MCP Clients (Claude Code)"
-description: "Control your browser from Claude Code, Gemini CLI, or any MCP client"
+title: "Use with Claude Code / Gemini CLI"
+description: "Control Posessed Browser from claude-code, gemini-cli, or any MCP client"
 ---
 
-Posessed Browser is the best browser for AI coding agents. It comes with a built-in MCP server that lets Claude Code control your browser — open tabs, extract page content, fill forms, take screenshots, and automate any web task.
+# Use with Claude Code / Gemini CLI
 
-<Note>
-Unlike Chrome DevTools MCP which requires setting up debug profiles and running separate servers, Posessed Browser MCP works out of the box. Just copy the URL from settings and connect.
-</Note>
+Posessed Browser can act as an MCP server, giving AI coding tools like `claude-code` and `gemini-cli` direct control over your browser through 31 tools.
 
-## Why Use Posessed Browser with Claude Code?
+## Setup
 
-<Columns cols={2}>
-  <Card title="Agentic Coding" icon="code">
-    Claude tests your web app, reads console errors, and fixes the code — all in one loop.
-  </Card>
-  <Card title="Data Extraction" icon="download">
-    Extract your LinkedIn profile, tweets, or any authenticated page content.
-  </Card>
-  <Card title="Task Automation" icon="repeat">
-    Fill forms, navigate multi-step workflows, and automate repetitive browser tasks.
-  </Card>
-  <Card title="31 Browser Tools" icon="wrench">
-    Full browser control: tabs, navigation, clicks, typing, screenshots, bookmarks, and history.
-  </Card>
-</Columns>
+### claude-code
 
-## Getting Started
+Add to your `claude_desktop_config.json`:
 
-<Steps>
-  <Step title="Open Posessed Browser Settings">
-    Navigate to `chrome://browseros/mcp` or click **Settings** → **Posessed Browser as MCP** in the sidebar.
-  </Step>
-  <Step title="Copy the MCP URL">
-    Copy the Server URL shown on the page (e.g., `http://127.0.0.1:9239/mcp`).
-
-    <img src="/images/features--browseros-mcp-settings.png" alt="Posessed Browser MCP settings page showing Server URL" />
-  </Step>
-  <Step title="Connect your MCP client">
-    Use the tabs below to connect your preferred client.
-  </Step>
-</Steps>
-
-<Tabs>
-  <Tab title="Claude Code">
-    Add Posessed Browser to Claude Code:
-    ```bash
-    claude mcp add --transport http browseros <mcp_url> --scope user
-    # Example: claude mcp add --transport http browseros http://127.0.0.1:9239/mcp --scope user
-    ```
-
-    Start Claude Code and try it:
-    ```bash
-    claude
-    > Open amazon.com in Posessed Browser
-    ```
-
-    <Tip>
-    Run `claude --dangerously-skip-permissions` to skip confirmation prompts for each browser action.
-    </Tip>
-
-    To remove later:
-    ```bash
-    claude mcp remove browseros --scope user
-    ```
-  </Tab>
-  <Tab title="Gemini CLI">
-    Add Posessed Browser to Gemini CLI:
-    ```bash
-    gemini mcp add local-server <mcp_url> --transport http --scope user
-    # Example: gemini mcp add local-server http://127.0.0.1:9239/mcp --transport http --scope user
-    ```
-  </Tab>
-  <Tab title="Codex">
-    Add Posessed Browser to OpenAI Codex CLI:
-    ```bash
-    codex mcp add browseros <mcp_url> --transport http
-    # Example: codex mcp add browseros http://127.0.0.1:9239/mcp --transport http
-    ```
-  </Tab>
-  <Tab title="Claude Desktop">
-    Open your Claude Desktop config file:
-    ```
-    ~/Library/Application Support/Claude/claude_desktop_config.json
-    ```
-
-    Add Posessed Browser:
-    ```json
-    {
-      "mcpServers": {
-        "browserOS": {
-          "command": "npx",
-          "args": ["mcp-remote", "http://127.0.0.1:9239/mcp"]
-        }
-      }
+```json
+{
+  "mcpServers": {
+    "posessed-browser": {
+      "command": "npx",
+      "args": ["-y", "@browseros/mcp-server@latest"]
     }
-    ```
-
-    Restart Claude Desktop to connect.
-  </Tab>
-</Tabs>
-
-## Example Prompts
-
-Once connected, try these prompts in Claude Code:
-
-```
-Open my LinkedIn profile in Posessed Browser and extract my work experience as JSON
+  }
+}
 ```
 
+### gemini-cli
+
+Add to your Gemini CLI configuration:
+
+```json
+{
+  "mcpServers": {
+    "posessed-browser": {
+      "command": "npx",
+      "args": ["-y", "@browseros/mcp-server@latest"]
+    }
+  }
+}
 ```
-In Posessed Browser, go to localhost:3000, click the login button, and check for console errors
-```
+
+### Any MCP Client
+
+The server runs as a local process and exposes a standard MCP interface. Point any MCP-compatible client to the process.
+
+## Available Browser Tools (31 total)
+
+| Category    | Tools                                                 |
+| ----------- | ----------------------------------------------------- |
+| Navigation  | `navigate`, `back`, `forward`, `reload`               |
+| Interaction | `click`, `type`, `scroll`, `hover`, `drag`            |
+| Content     | `get_page_content`, `extract_text`, `take_screenshot` |
+| Tabs        | `new_tab`, `switch_tab`, `close_tab`, `list_tabs`     |
+| Scripts     | `run_javascript`                                      |
+| And more    | Forms, cookies, network, storage                      |
+
+## Example Prompts (in claude-code)
 
 ```
-Take a screenshot of the current page in Posessed Browser and save it to screenshots/
+Browse to github.com/BlancoBAM/Posessed-Browser and summarize the README.
+
+Open 5 tabs with the top search results for "rust async programming" and extract the key points from each.
+
+Fill out the contact form at example.com with my details and submit it.
 ```
-
-```
-Search my Posessed Browser history for "invoice" and list the recent matches
-```
-
-## Available Tools
-
-Posessed Browser exposes 31 tools to MCP clients:
-
-| Category | Tools |
-|----------|-------|
-| **Tabs** | open, close, switch, list, group, ungroup |
-| **Navigation** | navigate, scroll up/down, scroll to element |
-| **Interaction** | click, type, clear input, send keys |
-| **Content** | get page content, get interactive elements, execute JavaScript |
-| **Screenshots** | capture page, capture with pointer overlay |
-| **Bookmarks** | list, create, remove |
-| **History** | search, get recent |
-
-## Demo Videos
-
-### Agentic coding workflow
-[![Frontend dev demo](https://img.youtube.com/vi/vcSxzIIkg_0/0.jpg)](https://youtu.be/vcSxzIIkg_0)
-
-### Browser automation with Claude Code
-[![Agentic tasks demo](https://img.youtube.com/vi/rPFx_Btajj0/0.jpg)](https://youtu.be/rPFx_Btajj0)

@@ -1,35 +1,39 @@
 ---
 title: "Ad Blocking"
-description: "Posessed Browser supports full ad blocking with uBlock Origin"
+description: "Built-in ad blocking with uBlock Origin and Manifest V2 support"
 ---
 
-Posessed Browser supports full ad blocking through [uBlock Origin](https://ublockorigin.com/), the most effective open-source ad blocker available.
+# Ad Blocking
 
-## How It Works
+Posessed Browser ships with a built-in ad blocker powered by uBlock Origin — one of the most effective blockers available. Unlike Chrome, which is phasing out Manifest V2 extensions, Posessed Browser keeps MV2 support fully enabled.
 
-Chrome has been [phasing out support](https://developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline) for Manifest V2 extensions, which uBlock Origin relies on for its full blocking capabilities. We re-enabled Manifest V2 support in Posessed Browser so uBlock Origin can run at full power.
+## What's Blocked
 
-Install it from the Chrome Web Store: [uBlock Origin](https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
+- Display ads and banners
+- Video pre-roll and mid-roll ads
+- Tracking scripts and pixels
+- Third-party analytics
+- Pop-ups and overlays
+- Cookie consent banners (optional)
 
-## Posessed Browser vs Chrome
+## Why It's Better Than Chrome
 
-We ran both browsers through [adblock.turtlecute.org](https://adblock.turtlecute.org/), a test that measures how effectively a browser blocks ads and tracking scripts.
+| Feature             | Chrome  | Posessed Browser |
+| ------------------- | ------- | ---------------- |
+| uBlock Origin (MV3) | Limited | Full             |
+| uBlock Origin (MV2) | Blocked | ✅ Supported     |
+| Native ad blocking  | ❌      | ✅ Built-in      |
+| Filter list updates | Manual  | Automatic        |
 
-<CardGroup cols={2}>
-  <Card title="Posessed Browser — 68%">
-    <img src="/images/adblock-browseros.png" alt="Posessed Browser blocking 68% of ads" />
-  </Card>
-  <Card title="Chrome — 7%">
-    <img src="/images/adblock-chrome.png" alt="Chrome blocking only 7% of ads" />
-  </Card>
-</CardGroup>
+## Configuration
 
-Out of 133 ad-related requests:
-- **Posessed Browser** blocked 91 (68%)
-- **Chrome** blocked 9 (7%)
+Go to **Settings → Ad Blocker** to:
 
-That's roughly **10x more protection** with zero configuration.
+- Enable/disable blocking globally or per site
+- Add custom filter rules
+- Whitelist trusted sites
+- Choose filter lists (EasyList, uBlock filters, etc.)
 
-## What This Means
+## Extensions
 
-Fewer ads means faster page loads, less bandwidth usage, and significantly reduced tracking. Posessed Browser handles this natively so you can focus on browsing.
+Because Posessed Browser supports Manifest V2, you can also install any Chrome extension from the Chrome Web Store — including the full version of uBlock Origin as a bonus layer.

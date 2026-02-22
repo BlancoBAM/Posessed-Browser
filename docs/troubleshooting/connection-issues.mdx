@@ -1,106 +1,54 @@
 ---
-title: "Has Agent Crashed?"
-description: "How to fix connection issues when the Posessed Browser agent is not responding"
+title: "Connection Issues"
+description: "Troubleshoot AI connection and MCP server issues in Posessed Browser"
 ---
 
-If you see **"Failed to Fetch"** or **"Unable to connect to Posessed Browser agent"**, your agent has been killed.
+# Connection Issues
 
-<Frame>
-  <img src="/images/troubleshooting/failed-to-fetch-error.png" alt="Failed to fetch error" />
-</Frame>
+## AI Assistant Not Responding
 
-## Windows: Did you allow the Posessed Browser Agent?
+**If you're on Lilith Linux:**
 
-When Posessed Browser starts for the first time on Windows, a popup will ask if you want to allow **Posessed Browser Agent** to access the network. Click **Allow** — the agent runs as a separate process alongside the browser and needs this permission to work. If you clicked **Cancel** or missed this prompt, the agent won't be able to connect.
+Check that the Lilim service is running:
 
-<Frame>
-  <img src="/images/windows-installation/windows-installation-allow-browseros-agent.png" alt="Allow Posessed Browser Agent network access prompt" />
-</Frame>
+```bash
+systemctl status lilim
+# If stopped:
+systemctl start lilim
+```
 
-To fix this, go to **Windows Security → Allow an app through your network settings**, and make sure **Posessed Browser Agent** is enabled.
+**If you're using another provider:**
 
-## Fix It
+- Verify your API key is correct in **Settings → AI Provider**
+- Check that you have a working internet connection
+- Try switching to a different provider temporarily
 
-<Steps>
-  <Step title="Go to Settings → MCP Server and click Restart">
-    Open **Settings** from the sidebar, scroll to the MCP Server section, and click **Restart**. Wait a couple of minutes.
+## MCP Server Connection Drops
 
-    <Frame>
-      <img src="/images/troubleshooting/mcp-server-restart.png" alt="Click Restart in MCP Server Settings" />
-    </Frame>
-  </Step>
+The MCP server port may change across browser restarts. To fix:
 
-  <Step title="If restart doesn't work, restart the Posessed Browser Agent manually">
-    <Tabs>
-      <Tab title="Windows">
-        1. Open **Task Manager** — press `Ctrl + Shift + Esc` or right-click the taskbar and select **Task Manager**.
-        2. In the search bar at the top, type **browseros agent**.
-        3. Right-click **Posessed Browser Agent** and select **End task**.
-        4. Reopen **Posessed Browser** — the agent will restart automatically.
+1. Go to **Settings → App Connector**
+2. Note the current MCP port shown
+3. Update your MCP client config to use the new port
 
-        <Frame>
-          <img src="/images/windows-installation/troubleshoot-search-restart-agent-task-manager.png" alt="Search for Posessed Browser Agent in Task Manager and restart it" />
-        </Frame>
+If the issue persists, toggling the MCP server off and on in settings forces a stable port assignment.
 
-        <Note>If the agent still doesn't reconnect, end both **Posessed Browser** and **Posessed Browser Agent** in Task Manager, then reopen the app.</Note>
-      </Tab>
-      <Tab title="macOS">
-        Right-click Posessed Browser in the Dock → **Quit**, then reopen the app.
-      </Tab>
-    </Tabs>
-  </Step>
-</Steps>
+## Agent Not Taking Actions
 
-## Still Not Working?
+If the agent responds but doesn't click or navigate:
 
-<AccordionGroup>
-  <Accordion title="Check if another application is using the port">
-    The agent runs on port `9100` by default. If another application is using this port, Posessed Browser cannot start the agent.
+1. Make sure the **Controller Extension** is installed and enabled (`chrome://extensions/`)
+2. Try reloading the extension
+3. For Lilim users: verify the Lilim server is accessible at the configured port
 
-    <Tabs>
-      <Tab title="macOS/Linux">
-        Find the process:
-        ```bash
-        lsof -i :9100
-        ```
+## Slow Agent Responses
 
-        Kill it (replace `PID` with the process ID from above):
-        ```bash
-        kill -9 PID
-        ```
-      </Tab>
-      <Tab title="Windows">
-        Find the process:
-        ```powershell
-        netstat -ano | findstr :9100
-        ```
+- **Lilim**: Check system resource usage — Lilim runs locally and needs available CPU/RAM
+- **Cloud providers**: Check your API rate limits and plan tier
+- **Ollama**: Pull a smaller model for faster inference (`ollama pull mistral` instead of larger variants)
 
-        Kill it (replace `PID` with the process ID from above):
-        ```powershell
-        taskkill /PID PID /F
-        ```
-      </Tab>
-    </Tabs>
+## Getting Help
 
-    Then restart Posessed Browser.
-  </Accordion>
-
-  <Accordion title="Check your firewall or antivirus settings">
-    Some firewalls may block local connections. Make sure your firewall allows connections to `127.0.0.1:9100`.
-
-    **Windows users:** Antivirus software sometimes triggers a false positive. Try temporarily disabling your antivirus and restarting Posessed Browser.
-  </Accordion>
-</AccordionGroup>
-
-## Get Help
-
-If you're still experiencing issues, reach out:
-
-<CardGroup cols={2}>
-  <Card title="Discord" icon="discord" href="https://discord.gg/YKwjt5vuKr">
-    Get help from the community
-  </Card>
-  <Card title="Slack" icon="slack" href="SLACK_LINK_HERE">
-    Join our Slack
-  </Card>
-</CardGroup>
+- [GitHub Issues](https://github.com/BlancoBAM/Posessed-Browser/issues) — bug reports
+- [GitHub Discussions](https://github.com/BlancoBAM/Posessed-Browser/discussions) — general questions
+- [Lilim Issues](https://github.com/BlancoBAM/Lilim/issues) — Lilim-specific problems

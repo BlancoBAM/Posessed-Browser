@@ -1,69 +1,52 @@
 ---
-title: "Workflows"
-description: "Build reliable, repeatable browser automations with a visual graph builder"
+title: "Agent Mode"
+description: "Automate any web task by describing it in plain English"
 ---
 
-Workflows let you turn complex browser tasks into reliable, reusable automations. Instead of hoping the agent figures out the right steps each time, you define the exact sequence—and run it whenever you need.
+# Agent Mode
 
-See how to build and run a workflow end-to-end:
+Agent Mode lets you describe any web task in plain English and watch Posessed Browser execute it — clicking, typing, navigating, extracting data, filling forms.
 
-<video
-  controls
-  className="w-full aspect-video rounded-xl"
-  src="https://pub-80f8a01e6e8b4239ae53a7652ef85877.r2.dev/resources/feature-videos/6-workflows.mp4"
-></video>
+On [Lilith Linux](https://github.com/BlancoBAM/Lilith-Linux), the agent is powered by **[Lilim](https://github.com/BlancoBAM/Lilim)** — no setup required.
 
-## When to Use Workflows
+## How to Use
 
-Use workflows when:
-- **Reliability matters** — The task needs to work the same way every time
-- **Steps are complex** — Multiple pages, loops, conditionals, or parallel actions
-- **You'll repeat it** — Run the same automation daily, weekly, or on-demand
+1. Open any webpage
+2. Click the **Assistant** button in the toolbar (or press `Ctrl+B`)
+3. Switch to **Agent Mode**
+4. Describe what you want done in plain English
+5. Watch the agent work
 
-For quick, one-off tasks, the regular agent works well. For serious automation, build a workflow.
+## Example Tasks
 
-## Creating Your First Workflow
+- _"Search Google for the top 5 AI tools released this week and summarize them"_
+- _"Go to amazon.com and find the cheapest USB-C hub with 4+ stars"_
+- _"Fill out this form with my address: 123 Main St..."_
+- _"Extract all email addresses from this page and copy them"_
+- _"Log in to my account and download the latest invoice"_
 
-<img src="/features/workflow/workflows-page.png" alt="Access Workflows from the sidebar or create a new workflow" />
+## Best Models for Agent Mode
 
-1. Open the **Workflows** page from the sidebar
-2. Click **+ New Workflow**
-3. Describe what you want in the chat panel
+| Model                  | Notes                                            |
+| ---------------------- | ------------------------------------------------ |
+| **Lilim**              | Default on Lilith Linux — purpose-built for this |
+| **Claude Opus/Sonnet** | Best among cloud models                          |
+| **GPT-4o**             | Good all-rounder                                 |
+| **Gemini Flash**       | Fast for simpler tasks                           |
 
-Try this example—copy and paste it to create a workflow that fills out forms from spreadsheet data:
+<Warning>
+  Most local models (Ollama, LM Studio) struggle with complex multi-step agent
+  tasks unless you're using Lilim, which is specifically optimized for Posessed
+  Browser.
+</Warning>
 
-```
-Navigate to the spreadsheet https://dub.sh/browseros/test-spreadsheet. Get the contact information and fill it out in the form https://dub.sh/browseros/test-form for each entry in the spreadsheet. Feel free to parallelize this, but ensure all entries are filled.
-```
+## How the Agent Works
 
-The workflow agent will generate a visual graph representing each step. You can refine the workflow by chatting further—ask it to add steps, handle edge cases, or adjust the logic.
+The agent uses a loop of perception, reasoning, and action:
 
-<img src="/features/workflow/sample-workflow.png" alt="Generated workflow graph with parallel execution" />
+1. **Perceive** — The agent reads the current page structure
+2. **Reason** — The AI (Lilim or your chosen model) decides the next action
+3. **Act** — The agent clicks, types, or navigates
+4. **Repeat** — Until the task is complete or it needs your input
 
-4. Click **Test Workflow** to run it and verify it works
-5. Click **Save Changes** to keep it for later
-
-## Running Workflows
-
-From the Workflows page, you can:
-- **Run** — Execute the workflow immediately
-- **Edit** — Open the graph builder to refine steps
-- **Delete** — Remove workflows you no longer need
-
-## Example Use Cases
-
-**Data entry automation**
-> Read contacts from a Google Sheet and submit each one to a web form—automatically handling pagination and parallel submissions.
-
-**LinkedIn outreach**
-> Visit each profile from a list, check if they match your criteria, and send a personalized connection request.
-
-**Price monitoring**
-> Check prices across multiple e-commerce sites, extract the data, and compile it into a spreadsheet.
-
-**Bulk unsubscribes**
-> Go through your Gmail, find subscription emails, and click unsubscribe on each one.
-
-## Feedback
-
-Workflows is a new feature. If you'd like to see scheduling support, sharing, or other capabilities, [open a GitHub issue](https://github.com/BlancoBAM/Posessed-Browser/issues) with your request.
+The agent operates inside your browser, with no remote screen capture or cloud relay.

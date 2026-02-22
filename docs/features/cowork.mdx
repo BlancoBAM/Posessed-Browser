@@ -1,120 +1,35 @@
 ---
-title: "Filesystem Access"
-description: "Give the assistant controlled access to local files and commands"
+title: "Cowork"
+description: "Combine browser automation with local file operations"
 ---
 
-Filesystem Access lets you describe complex tasks and let the agent handle them end-to-end. Combine browser automation with local file operations — research on the web, then save reports directly to your folder.
+# Cowork
 
-Here's what it looks like to give the agent access to your local files:
+Cowork lets you combine web browsing automation with local file operations. Research the web and save the results to a folder — all in one agent task.
 
-<video
-  controls
-  className="w-full aspect-video rounded-xl"
-  src="https://pub-80f8a01e6e8b4239ae53a7652ef85877.r2.dev/resources/feature-videos/3-filesystem-access.mp4"
-></video>
+## What Cowork Enables
 
-## Why Filesystem Access?
+- Research a topic online and write a report to `~/Documents/`
+- Scrape data from multiple pages and export as a CSV
+- Download files from web sources, process them, and save locally
+- Fill out forms using data from a local file
 
-Without Filesystem Access, the agent can only interact with browser tabs. With Filesystem Access enabled, it gains full access to a folder on your machine:
+## Using Cowork
 
-<Columns cols={3}>
-  <Card title="Read files" icon="file-import">
-    Access documents, data files, and more from your selected folder
-  </Card>
-  <Card title="Write files" icon="file-export">
-    Save reports, spreadsheets, markdown, HTML, and other outputs
-  </Card>
-  <Card title="Run commands" icon="terminal">
-    Execute shell commands within the folder
-  </Card>
-</Columns>
+1. Open the **Assistant** panel
+2. Describe a task that involves both the web and your filesystem:
+   _"Search Hacker News for AI news today, compile a summary, and save it to ~/Desktop/ai-briefing.md"_
+3. The agent will handle both sides — browser actions and file writes
 
-The real power: do both browser automation AND file operations in a single task. Describe what you want, step away, and come back to finished work.
+## On Lilith Linux
 
-## Setting Up Filesystem Access
+Cowork is particularly powerful on Lilith Linux because **[Lilim](https://github.com/BlancoBAM/Lilim)** has native awareness of your system. It can read from and write to your filesystem with the same ease as browsing the web.
 
-<Steps>
-  <Step title="Open the Filesystem Access selector">
-    Click the **Filesystem Access** dropdown next to the prompt input
-  </Step>
-  <Step title="Choose a folder">
-    Select a recent folder or click **Choose a different folder**
-  </Step>
-  <Step title="Grant access">
-    Allow Posessed Browser to access that folder when prompted
-  </Step>
-</Steps>
+<Info>
+  Lilim's system integration will deepen with future releases of Lilith Linux —
+  expect richer file management, terminal access, and inter-app automation.
+</Info>
 
-<Frame caption="Select a folder for the agent to operate in">
-  <img src="/features/cowork/cowork-selector.png" alt="Select a folder for the agent to operate in" />
-</Frame>
+## Privacy
 
-The agent is sandboxed to your selected folder — it cannot access files outside of it.
-
-<Tip>
-To disable file access, select **No folder** and the agent will work with browser tabs only.
-</Tip>
-
-## Try It: Research and Create a Report
-
-With Filesystem Access enabled, try this prompt:
-
-```
-Read the top 3 stories on Hacker News, read the comments too, and write an HTML report.
-```
-
-The agent will:
-
-<Steps>
-  <Step title="Navigate to Hacker News">
-    Opens the site and identifies top stories
-  </Step>
-  <Step title="Read stories and comments">
-    Clicks into each story and reads discussion threads
-  </Step>
-  <Step title="Generate report">
-    Creates an HTML report summarizing the findings
-  </Step>
-  <Step title="Save to folder">
-    Writes the report to your selected folder
-  </Step>
-</Steps>
-
-<Frame caption="Agent researching Hacker News and generating an HTML report">
-  <img src="/features/cowork/cowork-research-example.png" alt="Agent researching Hacker News and generating an HTML report" />
-</Frame>
-
-## Example Use Cases
-
-<AccordionGroup>
-  <Accordion title="Organize your downloads" icon="folder-tree">
-    > Go through my Downloads folder and organize files by type — documents, images, videos, archives.
-  </Accordion>
-  <Accordion title="Competitive research report" icon="magnifying-glass-chart">
-    > Research key trends about [topic] on Reddit, Twitter, and LinkedIn. Create an HTML report with your findings.
-  </Accordion>
-  <Accordion title="Web scraping to files" icon="spider-web">
-    > Visit these 10 product pages, extract the name, price, and description, and save the results as a markdown file.
-  </Accordion>
-  <Accordion title="Content aggregation" icon="newspaper">
-    > Find the top posts from these 5 subreddits today and compile them into a daily digest document.
-  </Accordion>
-</AccordionGroup>
-
-## Security
-
-<Columns cols={3}>
-  <Card title="Sandboxed access" icon="box">
-    The agent can only access the folder you select — no parent directories or other locations
-  </Card>
-  <Card title="Revoke anytime" icon="ban">
-    Select **No folder** to instantly disable file access
-  </Card>
-  <Card title="Local only" icon="house-laptop">
-    All file operations happen locally on your machine
-  </Card>
-</Columns>
-
-## Feedback
-
-Filesystem Access is a new feature. If you have feedback or feature requests, [open a GitHub issue](https://github.com/BlancoBAM/Posessed-Browser/issues).
+All operations happen locally. No data is sent to any external service unless you're using a cloud AI provider that receives the page content as part of the prompt.

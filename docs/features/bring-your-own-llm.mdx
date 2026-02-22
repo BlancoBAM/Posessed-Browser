@@ -1,146 +1,116 @@
 ---
-title: "Bring Your Own LLM"
-description: "Connect your own AI models to Posessed Browser"
+title: "AI Provider Setup"
+description: "Connect Lilim, Ollama, Claude, OpenAI, Gemini, or any other AI provider to Posessed Browser"
 ---
 
-Posessed Browser includes a default AI model you can use right away, but it has strict rate limits. For the best experience, bring your own API keys or run models locally.
+# AI Provider Setup
 
-See how to connect your own LLM in under a minute:
+Posessed Browser supports multiple AI providers. On [Lilith Linux](https://github.com/BlancoBAM/Lilith-Linux), **[Lilim](https://github.com/BlancoBAM/Lilim) is pre-configured** and requires no setup. On other systems, choose from the options below.
 
-<video
-  controls
-  className="w-full aspect-video rounded-xl"
-  src="https://pub-80f8a01e6e8b4239ae53a7652ef85877.r2.dev/resources/feature-videos/1-bring-your-own-LLM.mov"
-></video>
+## Lilim (Default on Lilith Linux)
 
-## Which Model Should I Use?
+[Lilim](https://github.com/BlancoBAM/Lilim) is the intelligent local AI system built for Lilith Linux and Posessed Browser. It runs entirely on your machine — no API key, no cloud, no cost.
 
-| Mode | What works | Recommendation |
-|------|------------|----------------|
-| **Chat Mode** | Any model, including local | Ollama or Gemini Flash |
-| **Agent Mode** | Cloud models only | Claude Opus 4.5 or Kimi K2.5 (open source) |
+**On Lilith Linux:** Already configured. Open the browser and start using the Assistant.
+
+**On other systems:** Install Lilim from [github.com/BlancoBAM/Lilim](https://github.com/BlancoBAM/Lilim), start the Lilim server, then set the API endpoint in Posessed Browser settings to `http://localhost:<lilim-port>`.
+
+<Info>
+  As Lilim evolves, Posessed Browser will automatically benefit — better
+  reasoning, faster inference, and deeper integration with Lilith Linux system
+  features are on the roadmap.
+</Info>
+
+---
+
+## Ollama (Free, Local)
+
+[Ollama](https://ollama.com) lets you run open-source LLMs locally for free.
+
+1. Install Ollama from [ollama.com](https://ollama.com)
+2. Pull a model: `ollama pull llama3` (or `mistral`, `gemma`, etc.)
+3. In Posessed Browser: **Settings → AI Provider → Ollama**
+
+**Best models for agent tasks:** `llama3`, `mistral-nemo`, `qwen2.5`
+
+---
+
+## LM Studio (Free, Local)
+
+[LM Studio](https://lmstudio.ai) supports any GGUF model.
+
+1. Download from [lmstudio.ai](https://lmstudio.ai)
+2. Download any model from the in-app browser
+3. Start the local server in LM Studio
+4. In Posessed Browser: **Settings → AI Provider → LM Studio**
+
+---
+
+## Claude (Anthropic)
+
+Best choice for complex agentic tasks and multi-step automation.
+
+1. Get an API key from [console.anthropic.com](https://console.anthropic.com)
+2. In Posessed Browser: **Settings → AI Provider → Claude**
+3. Paste your API key
+
+**Recommended models:**
+| Model | Speed | Quality | Best for |
+|-------|-------|---------|----------|
+| Claude Opus | Slower | Best | Complex automation |
+| Claude Sonnet | Medium | Great | General agent tasks |
+| Claude Haiku | Fast | Good | Simple tasks |
+
+---
+
+## OpenAI
+
+1. Get an API key from [platform.openai.com](https://platform.openai.com)
+2. In Posessed Browser: **Settings → AI Provider → OpenAI**
+3. Paste your API key
+
+Supported models: `gpt-4o`, `o1`, `o1-mini`, `o3-mini`
+
+---
+
+## Gemini (Google)
+
+1. Get an API key from [aistudio.google.com](https://aistudio.google.com)
+2. In Posessed Browser: **Settings → AI Provider → Gemini**
+3. Paste your API key
+
+**Gemini Flash** is recommended for its speed and cost efficiency.
+
+---
+
+## Azure OpenAI / AWS Bedrock
+
+For enterprise deployments:
+
+- **Azure:** **Settings → AI Provider → Azure OpenAI** — enter your endpoint URL and API key
+- **AWS Bedrock:** **Settings → AI Provider → AWS Bedrock** — enter your region and credentials
+
+---
+
+## OpenAI-Compatible Endpoints
+
+Connect any API that follows the OpenAI spec (e.g., local servers, custom inference backends, or third-party compatible services):
+
+**Settings → AI Provider → OpenAI-Compatible** → enter your base URL and API key.
+
+---
+
+## Which Model for Agent Tasks?
 
 <Warning>
-**Local LLMs aren't powerful for most agentic tasks yet.** They're great for Chat — asking questions about a page, summarizing, etc. But agent tasks need strong reasoning to click the right elements and handle multi-step workflows. Use Claude Opus 4.5, Sonnet 4.5, or Kimi K2.5 for agents.
+  Local LLMs (other than Lilim) may struggle with complex Agent Mode tasks.
+  Lilim is purpose-built for the Posessed Browser environment. For other local
+  models, we recommend testing before relying on them for automation.
 </Warning>
 
-<Note>
-Kimi K2.5 is an open-source, multimodal model with great agentic performance — and 60-70% cheaper than Claude models.
-</Note>
+For best results with Agent Mode:
 
----
-
-## Cloud Providers
-
-Connect to powerful AI models using your API keys. Your keys stay on your machine — requests go directly to the provider.
-
-<AccordionGroup>
-  <div id="gemini" />
-  <Accordion title="Gemini (Free)" icon="google">
-    Gemini Flash is fast and free. Google gives you 20 requests per minute at no cost.
-
-    **Get your API key:**
-    1. Go to [aistudio.google.com](https://aistudio.google.com)
-    2. Click **Get API key** in the sidebar
-    3. Click **Create API key** and copy it
-
-    ![Get Gemini API key](/images/gemini-get-api-key.png)
-
-    **Add to Posessed Browser:**
-    1. Go to `chrome://browseros/settings`
-    2. Click **USE** on the Gemini card
-    3. Set **Model ID** to `gemini-2.5-flash-preview-05-20`
-    4. Paste your API key
-    5. Check **Supports Images**, set **Context Window** to `1000000`
-    6. Click **Save**
-
-    ![Gemini config](/images/byollm--gemini-provider-config.png)
-  </Accordion>
-
-  <div id="claude" />
-  <Accordion title="Claude (Best for Agents)" icon="message-bot">
-    Claude Opus 4.5 gives the best results for Agent Mode.
-
-    **Get your API key:**
-    1. Go to [console.anthropic.com](https://console.anthropic.com/dashboard)
-    2. Click **API keys** in the sidebar
-    3. Click **Create Key** and copy it
-
-    ![Get Claude API key](/images/claude-api-keys.png)
-
-    **Add to Posessed Browser:**
-    1. Go to `chrome://browseros/settings`
-    2. Click **USE** on the Anthropic card
-    3. Set **Model ID** to `claude-opus-4-5-20250514`
-    4. Paste your API key
-    5. Check **Supports Images**, set **Context Window** to `200000`
-    6. Click **Save**
-
-    ![Claude config](/images/byollm--claude-provider-config.png)
-  </Accordion>
-
-  <div id="openai" />
-  <Accordion title="OpenAI" icon="brain">
-    GPT-4.1 is solid for both chat and agent tasks.
-
-    **Get your API key:**
-    1. Go to [platform.openai.com](https://platform.openai.com)
-    2. Click settings icon → **API keys**
-    3. Click **Create new secret key** and copy it
-
-    ![Get OpenAI API key](/images/openai-api-keys.png)
-
-    **Add to Posessed Browser:**
-    1. Go to `chrome://browseros/settings`
-    2. Click **USE** on the OpenAI card
-    3. Set **Model ID** to `gpt-4.1`
-    4. Paste your API key
-    5. Check **Supports Images**, set **Context Window** to `128000`
-    6. Click **Save**
-
-    ![OpenAI config](/images/byollm--openai-provider-config.png)
-  </Accordion>
-
-  <div id="openrouter" />
-  <Accordion title="OpenRouter" icon="shuffle">
-    Access 500+ models through one API.
-
-    **Get your API key:**
-    1. Go to [openrouter.ai](https://openrouter.ai) and sign up
-    2. Copy your API key from the homepage
-
-    **Pick a model:**
-    Go to [openrouter.ai/models](https://openrouter.ai/models) and copy the model ID you want (e.g., `anthropic/claude-opus-4.5`).
-
-    ![OpenRouter models](/images/openrouter-models.png)
-
-    **Add to Posessed Browser:**
-    1. Go to `chrome://browseros/settings`
-    2. Click **USE** on the OpenRouter card
-    3. Paste the model ID and your API key
-    4. Set **Context Window** based on the model
-    5. Click **Save**
-
-    ![OpenRouter config](/images/byollm--openrouter-provider-config.png)
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Local Models
-
-<Card title="Local Model Guide" icon="server" href="/features/local-models">
-  Run AI completely offline with Ollama or LM Studio. Includes recommended models, context length setup, and configuration steps.
-</Card>
-
----
-
-## Switching Between Models
-
-Use the model switcher in the Assistant panel to change providers anytime. The default provider is highlighted.
-
-![Model switcher](/images/byollm--switcher.png)
-
-<Tip>
-Use local models for sensitive work data. Switch to Claude for agent tasks that need complex reasoning.
-</Tip>
+1. **Lilim** (on Lilith Linux) — purpose-built, locally optimized
+2. **Claude Opus/Sonnet** — strong reasoning, reliable tool use
+3. **GPT-4o** — good all-rounder
+4. **Gemini Flash** — fast, decent for simpler tasks

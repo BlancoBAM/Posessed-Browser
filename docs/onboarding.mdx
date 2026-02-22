@@ -1,54 +1,74 @@
 ---
 title: "Getting Started"
-description: "Set up Posessed Browser in 2 minutes"
+description: "Set up Posessed Browser on Lilith Linux or any other OS"
 ---
 
-Welcome to Posessed Browser! Let's get you set up.
+## On Lilith Linux
+
+Posessed Browser is your **default browser** on Lilith Linux — it's already installed and [Lilim](https://github.com/BlancoBAM/Lilim) is pre-configured as the AI backend.
+
+Open the browser and click the **Assistant** button in the toolbar. That's it — no setup needed.
+
+---
+
+## On Other Operating Systems
 
 <Steps>
-  <Step title="Import from Chrome">
-    Bring your bookmarks, history, and passwords from Chrome.
+  <Step title="Download">
+    Get the latest build from [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases).
 
-    1. Go to `chrome://settings/importData`
-    2. Select **Google Chrome** and click **Import**
-    3. Choose **Always allow** when prompted
+    | Platform | File |
+    |----------|------|
+    | Windows | `Posessed-Browser_installer.exe` |
+    | Linux (AppImage) | `Posessed-Browser.AppImage` |
+    | Linux (Debian/Ubuntu) | `Posessed-Browser.deb` |
 
-    <Tip>
-    This imports everything in one click — bookmarks, passwords, history, and extensions.
-    </Tip>
   </Step>
 
-  <Step title="Set up your AI">
-    Posessed Browser includes a default AI model with limited daily usage. For the best experience, add your own.
+<Step title="Install">
+  Run the installer for your platform. Posessed Browser installs like any other
+  Chromium-based browser.
+</Step>
 
-    **Quick option:** Get a free Gemini API key from [aistudio.google.com](https://aistudio.google.com) — 20 requests per minute at no cost.
+<Step title="Import from Chrome (optional)">
+  Navigate to `chrome://settings/importData` to import your bookmarks, saved
+  passwords, and browser history.
+</Step>
 
-    <Card title="Configure your LLM" icon="key" href="/features/bring-your-own-llm">
-      Set up Gemini, Claude, OpenAI, or run models locally with Ollama
+  <Step title="Configure your AI provider">
+    Go to **Settings → AI Provider** to connect your AI. Options:
+
+    - **Lilim (local)** — Install [Lilim](https://github.com/BlancoBAM/Lilim) on your machine for a fully local experience
+    - **Ollama** — Free, local ([ollama.com](https://ollama.com))
+    - **Claude, OpenAI, Gemini** — Bring your own API key
+    - **LM Studio** — Run any GGUF model locally
+
+    <Card title="AI Provider Setup" icon="key" href="/features/bring-your-own-llm">
+      Detailed guide to connecting Lilim, Ollama, Claude, OpenAI, and more
     </Card>
+
   </Step>
 
-  <Step title="Try it out">
-    Open any webpage and click the **Assistant** button in the toolbar.
-
-    - **Chat Mode:** Ask questions about the page
-    - **Agent Mode:** Describe a task and watch it execute
-
-    <Note>
-    For Agent Mode, use Claude Opus 4.5 or Sonnet 4.5. Local models work great for Chat but aren't powerful enough for agents yet.
-    </Note>
+  <Step title="Start using AI">
+    Open any webpage, press the **Assistant** button, and describe what you need.
   </Step>
 </Steps>
 
-## You're all set!
+---
 
-Explore what Posessed Browser can do:
+## What to Try First
 
-<Columns cols={2}>
-  <Card title="LLM Chat & Hub" icon="message" href="/features/llm-chat-hub">
-    Chat with AI on any page, compare responses across models
-  </Card>
-  <Card title="Use with Claude Code" icon="terminal" href="/features/use-with-claude-code">
-    Control Posessed Browser from Claude Code or Gemini CLI
-  </Card>
-</Columns>
+Here are some things to try once you're set up:
+
+- **Summarize a page** — Open any article and ask "Summarize this"
+- **Fill a form** — Navigate to a form and ask the agent to fill it in
+- **Extract data** — Ask the agent to scrape a table into a list
+- **Automate a workflow** — Describe a multi-step task (e.g., "Search Google for X, open the first 3 results, summarize them")
+
+---
+
+<Info>
+  **Lilith Linux users**: As Lilim is updated, your browser's AI capabilities
+  automatically improve. Future Lilim releases will bring faster inference,
+  better reasoning, and deeper system integration — no configuration required.
+</Info>
