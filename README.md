@@ -118,7 +118,7 @@ Posessed Browser is a **first-class citizen** of the Lilith Linux ecosystem:
 - Ships as the **default browser** in Lilith Linux
 - **Lilim is pre-configured** — no setup required
 - **System-aware** — Lilim can access your filesystem, terminal, and system state
-- **In Lilith Linux's official repos** — system updates (`apt upgrade`) deliver the latest Posessed Browser. Standalone releases are also published independently on [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases)
+- **In Lilith Linux's official repos** — system updates deliver the latest Posessed Browser. Standalone releases are also published independently on [GitHub Releases](https://github.com/BlancoBAM/Posessed-Browser/releases)
 
 As Lilim and Lilith Linux grow, expect Posessed Browser to grow with them:
 
@@ -128,22 +128,6 @@ As Lilim and Lilith Linux grow, expect Posessed Browser to grow with them:
 
 ---
 
-## Contributing
-
-Built on Chromium, Posessed Browser has two areas to contribute to:
-
-- **Agent** — AI features, UI, and browser automation (`TypeScript/React`)
-- **Browser** — Chromium patches and build system (`C++/Python`)
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for full setup instructions.
-
-Quick links:
-
-- 🐛 [Report a bug](https://github.com/BlancoBAM/Posessed-Browser/issues)
-- 💡 [Request a feature](https://github.com/BlancoBAM/Posessed-Browser/issues)
-- 🔀 [Open a pull request](https://github.com/BlancoBAM/Posessed-Browser/pulls)
-
----
 
 ## Architecture
 
@@ -167,6 +151,8 @@ The AI agent runs as a Chrome extension, with a local Bun server handling the ag
 - **[ungoogled-chromium](https://github.com/ungoogled-software/ungoogled-chromium)** — Privacy patches
 - **[The Chromium Project](https://www.chromium.org/)** — The foundation everything is built on
 
+  ###But Most Importantly:
+- **[BrowserOS](<https://github.com/browseros-ai/BrowserOS>)** The direct parent of this fork
 ---
 
 ## License
