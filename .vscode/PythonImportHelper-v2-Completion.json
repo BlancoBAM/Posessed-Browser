@@ -3077,7 +3077,7 @@
         "kind": 2,
         "importPath": "packages.browseros.build.modules.package",
         "description": "packages.browseros.build.modules.package",
-        "peekOfCode": "def create_dmg(\n    app_path: Path,\n    dmg_path: Path,\n    volume_name: str = \"BrowserOS\",\n    pkg_dmg_path: Optional[Path] = None,\n) -> bool:\n    \"\"\"Create a DMG package from an app bundle\"\"\"\n    log_info(f\"\\n📀 Creating DMG package: {dmg_path.name}\")\n    # Verify app exists\n    if not app_path.exists():",
+        "peekOfCode": "def create_dmg(\n    app_path: Path,\n    dmg_path: Path,\n    volume_name: str = \"Posessed Browser\",\n    pkg_dmg_path: Optional[Path] = None,\n) -> bool:\n    \"\"\"Create a DMG package from an app bundle\"\"\"\n    log_info(f\"\\n📀 Creating DMG package: {dmg_path.name}\")\n    # Verify app exists\n    if not app_path.exists():",
         "detail": "packages.browseros.build.modules.package",
         "documentation": {}
     },
@@ -3104,7 +3104,7 @@
         "kind": 2,
         "importPath": "packages.browseros.build.modules.package",
         "description": "packages.browseros.build.modules.package",
-        "peekOfCode": "def create_signed_notarized_dmg(\n    app_path: Path,\n    dmg_path: Path,\n    certificate_name: str,\n    volume_name: str = \"BrowserOS\",\n    pkg_dmg_path: Optional[Path] = None,\n    keychain_profile: str = \"notarytool-profile\",\n) -> bool:\n    \"\"\"Create, sign, and notarize a DMG in one go\"\"\"\n    log_info(\"=\" * 70)",
+        "peekOfCode": "def create_signed_notarized_dmg(\n    app_path: Path,\n    dmg_path: Path,\n    certificate_name: str,\n    volume_name: str = \"Posessed Browser\",\n    pkg_dmg_path: Optional[Path] = None,\n    keychain_profile: str = \"notarytool-profile\",\n) -> bool:\n    \"\"\"Create, sign, and notarize a DMG in one go\"\"\"\n    log_info(\"=\" * 70)",
         "detail": "packages.browseros.build.modules.package",
         "documentation": {}
     },
@@ -3149,7 +3149,7 @@
         "kind": 2,
         "importPath": "packages.browseros.build.modules.package_linux",
         "description": "packages.browseros.build.modules.package_linux",
-        "peekOfCode": "def package(ctx: BuildContext) -> bool:\n    \"\"\"Package BrowserOS for Linux as AppImage\"\"\"\n    log_info(\n        f\"📦 Packaging {ctx.NXTSCAPE_APP_BASE_NAME} {ctx.get_nxtscape_chromium_version()} for Linux ({ctx.architecture})\"\n    )\n    # Create packaging directory\n    package_dir = ctx.get_dist_dir()\n    package_dir.mkdir(parents=True, exist_ok=True)\n    # Prepare AppDir\n    appdir = Path(join_paths(package_dir, f\"{ctx.NXTSCAPE_APP_BASE_NAME}.AppDir\"))",
+        "peekOfCode": "def package(ctx: BuildContext) -> bool:\n    \"\"\"Package Posessed Browser for Linux as AppImage\"\"\"\n    log_info(\n        f\"📦 Packaging {ctx.NXTSCAPE_APP_BASE_NAME} {ctx.get_nxtscape_chromium_version()} for Linux ({ctx.architecture})\"\n    )\n    # Create packaging directory\n    package_dir = ctx.get_dist_dir()\n    package_dir.mkdir(parents=True, exist_ok=True)\n    # Prepare AppDir\n    appdir = Path(join_paths(package_dir, f\"{ctx.NXTSCAPE_APP_BASE_NAME}.AppDir\"))",
         "detail": "packages.browseros.build.modules.package_linux",
         "documentation": {}
     },
@@ -3464,7 +3464,7 @@
         "kind": 2,
         "importPath": "packages.browseros.build.modules.sign",
         "description": "packages.browseros.build.modules.sign",
-        "peekOfCode": "def sign_app(ctx: BuildContext, create_dmg: bool = True) -> bool:\n    \"\"\"Main signing function that uses BuildContext from build.py\"\"\"\n    log_info(\"=\" * 70)\n    log_info(\"🚀 Starting signing process for BrowserOS...\")\n    log_info(\"=\" * 70)\n    # Error tracking similar to bash script\n    error_count = 0\n    error_messages = []\n    def track_error(msg: str):\n        nonlocal error_count",
+        "peekOfCode": "def sign_app(ctx: BuildContext, create_dmg: bool = True) -> bool:\n    \"\"\"Main signing function that uses BuildContext from build.py\"\"\"\n    log_info(\"=\" * 70)\n    log_info(\"🚀 Starting signing process for Posessed Browser...\")\n    log_info(\"=\" * 70)\n    # Error tracking similar to bash script\n    error_count = 0\n    error_messages = []\n    def track_error(msg: str):\n        nonlocal error_count",
         "detail": "packages.browseros.build.modules.sign",
         "documentation": {}
     },
@@ -3572,7 +3572,7 @@
         "kind": 5,
         "importPath": "packages.browseros.build.modules.string_replaces",
         "description": "packages.browseros.build.modules.string_replaces",
-        "peekOfCode": "branding_replacements = [\n    (\n        r\"The Chromium Authors. All rights reserved.\",\n        r\"The BrowserOS Authors. All rights reserved.\",\n    ),\n    (\n        r\"Google LLC. All rights reserved.\",\n        r\"The BrowserOS Authors. All rights reserved.\",\n    ),\n    (r\"The Chromium Authors\", r\"BrowserOS Software Inc\"),",
+        "peekOfCode": "branding_replacements = [\n    (\n        r\"The Chromium Authors. All rights reserved.\",\n        r\"The Posessed Browser Authors. All rights reserved.\",\n    ),\n    (\n        r\"Google LLC. All rights reserved.\",\n        r\"The Posessed Browser Authors. All rights reserved.\",\n    ),\n    (r\"The Chromium Authors\", r\"Posessed Browser Software Inc\"),",
         "detail": "packages.browseros.build.modules.string_replaces",
         "documentation": {}
     },

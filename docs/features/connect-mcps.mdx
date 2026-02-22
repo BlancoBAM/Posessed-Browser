@@ -1,9 +1,9 @@
 ---
 title: "Connect Apps (MCPs)"
-description: "Link your apps to BrowserOS so the assistant can read data and take actions"
+description: "Link your apps to Posessed Browser so the assistant can read data and take actions"
 ---
 
-Connect your favorite apps to BrowserOS so the assistant can read your emails, check your calendar, post to Slack, update Notion, and more — all through natural conversation.
+Connect your favorite apps to Posessed Browser so the assistant can read your emails, check your calendar, post to Slack, update Notion, and more — all through natural conversation.
 
 See how to connect an app and start using it with the assistant:
 
@@ -15,7 +15,7 @@ See how to connect an app and start using it with the assistant:
 
 ## What is MCP?
 
-BrowserOS Connected Apps use the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/), an open standard for connecting AI assistants to external systems. Think of it as a single, consistent way to plug your apps into the assistant.
+Posessed Browser Connected Apps use the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/), an open standard for connecting AI assistants to external systems. Think of it as a single, consistent way to plug your apps into the assistant.
 
 ## Built-in Apps
 
@@ -32,7 +32,7 @@ BrowserOS Connected Apps use the [Model Context Protocol (MCP)](https://modelcon
 
 1. Go to **Settings → Connected Apps**
 2. Click **Add built-in app** and select the app
-3. Sign in and authorize BrowserOS
+3. Sign in and authorize Posessed Browser
 
 <Frame caption="Connected apps show a green 'Authenticated' badge">
   <img src="/images/connect-apps-settings.png" alt="Connected Apps settings page" />
@@ -102,10 +102,10 @@ Some remote MCP servers (like Atlassian Jira, GitHub, etc.) require OAuth authen
 npx -y supergateway --stdio "npx -y mcp-remote https://mcp.atlassian.com/v1/sse" --port 8000
 ```
 
-A browser window will open to sign in. Once authenticated, add `http://localhost:8000/sse` as a custom MCP in BrowserOS.
+A browser window will open to sign in. Once authenticated, add `http://localhost:8000/sse` as a custom MCP in Posessed Browser.
 
 <Note>
-Keep the terminal running while you use BrowserOS. The local server handles authentication and proxies requests to the remote MCP server.
+Keep the terminal running while you use Posessed Browser. The local server handles authentication and proxies requests to the remote MCP server.
 </Note>
 
 <AccordionGroup>
@@ -127,12 +127,12 @@ Keep the terminal running while you use BrowserOS. The local server handles auth
 
 <Columns cols={3}>
   <Card title="Your data stays local" icon="lock">
-    BrowserOS connects directly to your accounts. Credentials are stored locally on your machine.
+    Posessed Browser connects directly to your accounts. Credentials are stored locally on your machine.
   </Card>
   <Card title="You control access" icon="toggle-on">
     Connect or disconnect apps anytime in Settings.
   </Card>
   <Card title="Secure OAuth" icon="shield-check">
-    Built-in apps use OAuth flows — BrowserOS never sees your passwords.
+    Built-in apps use OAuth flows — Posessed Browser never sees your passwords.
   </Card>
 </Columns>

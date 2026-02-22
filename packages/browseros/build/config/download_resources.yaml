@@ -1,4 +1,4 @@
-# Download resources configuration for BrowserOS build
+# Download resources configuration for Posessed Browser build
 # This file defines resources to download from R2 before the build process
 #
 # Behavior:
@@ -28,36 +28,36 @@
 #     arch: ["arm64"]
 
 download_operations:
-  # BrowserOS Server Binary - Platform & Architecture specific
-  - name: "BrowserOS Server - macOS ARM64"
+  # Posessed Browser Server Binary - Platform & Architecture specific
+  - name: "Posessed Browser Server - macOS ARM64"
     r2_key: "binaries/browseros-server/browseros-server-darwin-arm64"
     destination: "resources/binaries/browseros_server/browseros-server-darwin-arm64"
     os: ["macos"]
     arch: ["arm64"]
     executable: true
 
-  - name: "BrowserOS Server - macOS x64"
+  - name: "Posessed Browser Server - macOS x64"
     r2_key: "binaries/browseros-server/browseros-server-darwin-x64"
     destination: "resources/binaries/browseros_server/browseros-server-darwin-x64"
     os: ["macos"]
     arch: ["x64"]
     executable: true
 
-  - name: "BrowserOS Server - Linux ARM64"
+  - name: "Posessed Browser Server - Linux ARM64"
     r2_key: "binaries/browseros-server/browseros-server-linux-arm64"
     destination: "resources/binaries/browseros_server/browseros-server-linux-arm64"
     os: ["linux"]
     arch: ["arm64"]
     executable: true
 
-  - name: "BrowserOS Server - Linux x64"
+  - name: "Posessed Browser Server - Linux x64"
     r2_key: "binaries/browseros-server/browseros-server-linux-x64"
     destination: "resources/binaries/browseros_server/browseros-server-linux-x64"
     os: ["linux"]
     arch: ["x64"]
     executable: true
 
-  - name: "BrowserOS Server - Windows x64"
+  - name: "Posessed Browser Server - Windows x64"
     r2_key: "binaries/browseros-server/browseros-server-windows-x64.exe"
     destination: "resources/binaries/browseros_server/browseros-server-windows-x64.exe"
     os: ["windows"]

@@ -1,23 +1,19 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "name": "BrowserOS Documentation",
+  "name": "Posessed Browser Documentation",
   "colors": {
-    "primary": "#f25e1a",
-    "light": "#FF7A3D",
-    "dark": "#D14E10"
+    "primary": "#FF4500",
+    "light": "#FF6B2B",
+    "dark": "#1a0800"
   },
+  "appearance": "dark",
   "favicon": "/logo/favicon.png",
   "navigation": {
     "groups": [
       {
         "group": "Get Started",
-        "pages": [
-          "index",
-          "onboarding",
-          "update/index",
-          "changelog"
-        ]
+        "pages": ["index", "onboarding", "update/index", "changelog"]
       },
       {
         "group": "Core Features",
@@ -48,8 +44,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/logo44.png",
-    "dark": "/logo/logo44.png"
+    "light": "/logo/posessed-browser-logo.png",
+    "dark": "/logo/posessed-browser-logo.png"
   },
   "navbar": {
     "links": [
@@ -61,7 +57,7 @@
     "primary": {
       "type": "button",
       "label": "Download",
-      "href": "https://browseros.com"
+      "href": "https://github.com/BlancoBAM/Posessed-Browser/releases"
     }
   },
   "contextual": {
@@ -78,10 +74,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/browseros_ai",
-      "github": "https://github.com/BrowserOS-ai/BrowserOS",
-      "discord": "https://discord.gg/YKwjt5vuKr",
-      "slack": "https://dub.sh/browserOS-slack"
+      "github": "https://github.com/BlancoBAM/Posessed-Browser",
+      "discord": "https://discord.gg/YKwjt5vuKr"
     }
   }
 }

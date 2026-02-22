@@ -1,4 +1,4 @@
-# BrowserOS macOS Debug Build Configuration
+# Posessed Browser macOS Debug Build Configuration
 #
 # Debug builds use single architecture for faster iteration.
 # Use --arch flag to specify arm64 or x64 (defaults to system architecture).

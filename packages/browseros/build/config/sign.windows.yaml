@@ -1,4 +1,4 @@
-# BrowserOS Windows Sign & Package Configuration
+# Posessed Browser Windows Sign & Package Configuration
 #
 # This config signs and packages an already-built Windows application.
 # Use this when you have a pre-built app and only need to sign/package it.

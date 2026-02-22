@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "browseros"
 version = "0.0.1"
-description = "BrowserOS Build System"
+description = "Posessed Browser Build System"
 requires-python = ">=3.12"
 dependencies = [
   "click>=8.0.0",

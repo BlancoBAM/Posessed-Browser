@@ -1,9 +1,9 @@
-# BrowserOS macOS Sign & Package Configuration
+# Posessed Browser macOS Sign & Package Configuration
 #
 # This config signs and packages an already-built macOS application.
 # Use this when you have a pre-built app and only need to sign/package it.
 #
-# Expects: out/Default_universal/BrowserOS.app (or architecture-specific path)
+# Expects: out/Default_universal/Posessed Browser.app (or architecture-specific path)
 #
 # Environment Variables:
 #   Use !env tag to reference environment variables:

@@ -29,7 +29,7 @@ features:
   branding:
     description: "chore: browseros branding and identity"
     files:
-      # Chrome + BrowserOS version
+      # Chrome + Posessed Browser version
       - chrome/VERSION
       - chrome/BROWSEROS_VERSION
       - base/version_info/BUILD.gn

@@ -1,4 +1,4 @@
-# BrowserOS Linux Package Configuration
+# Posessed Browser Linux Package Configuration
 #
 # This config packages an already-built Linux application.
 # Use this when you have a pre-built app and only need to package it.

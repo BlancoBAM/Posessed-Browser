@@ -3,13 +3,13 @@ title: "MCP Clients (Claude Code)"
 description: "Control your browser from Claude Code, Gemini CLI, or any MCP client"
 ---
 
-BrowserOS is the best browser for AI coding agents. It comes with a built-in MCP server that lets Claude Code control your browser — open tabs, extract page content, fill forms, take screenshots, and automate any web task.
+Posessed Browser is the best browser for AI coding agents. It comes with a built-in MCP server that lets Claude Code control your browser — open tabs, extract page content, fill forms, take screenshots, and automate any web task.
 
 <Note>
-Unlike Chrome DevTools MCP which requires setting up debug profiles and running separate servers, BrowserOS MCP works out of the box. Just copy the URL from settings and connect.
+Unlike Chrome DevTools MCP which requires setting up debug profiles and running separate servers, Posessed Browser MCP works out of the box. Just copy the URL from settings and connect.
 </Note>
 
-## Why Use BrowserOS with Claude Code?
+## Why Use Posessed Browser with Claude Code?
 
 <Columns cols={2}>
   <Card title="Agentic Coding" icon="code">
@@ -29,13 +29,13 @@ Unlike Chrome DevTools MCP which requires setting up debug profiles and running 
 ## Getting Started
 
 <Steps>
-  <Step title="Open BrowserOS Settings">
-    Navigate to `chrome://browseros/mcp` or click **Settings** → **BrowserOS as MCP** in the sidebar.
+  <Step title="Open Posessed Browser Settings">
+    Navigate to `chrome://browseros/mcp` or click **Settings** → **Posessed Browser as MCP** in the sidebar.
   </Step>
   <Step title="Copy the MCP URL">
     Copy the Server URL shown on the page (e.g., `http://127.0.0.1:9239/mcp`).
 
-    <img src="/images/features--browseros-mcp-settings.png" alt="BrowserOS MCP settings page showing Server URL" />
+    <img src="/images/features--browseros-mcp-settings.png" alt="Posessed Browser MCP settings page showing Server URL" />
   </Step>
   <Step title="Connect your MCP client">
     Use the tabs below to connect your preferred client.
@@ -44,7 +44,7 @@ Unlike Chrome DevTools MCP which requires setting up debug profiles and running 
 
 <Tabs>
   <Tab title="Claude Code">
-    Add BrowserOS to Claude Code:
+    Add Posessed Browser to Claude Code:
     ```bash
     claude mcp add --transport http browseros <mcp_url> --scope user
     # Example: claude mcp add --transport http browseros http://127.0.0.1:9239/mcp --scope user
@@ -53,7 +53,7 @@ Unlike Chrome DevTools MCP which requires setting up debug profiles and running 
     Start Claude Code and try it:
     ```bash
     claude
-    > Open amazon.com in BrowserOS
+    > Open amazon.com in Posessed Browser
     ```
 
     <Tip>
@@ -66,14 +66,14 @@ Unlike Chrome DevTools MCP which requires setting up debug profiles and running 
     ```
   </Tab>
   <Tab title="Gemini CLI">
-    Add BrowserOS to Gemini CLI:
+    Add Posessed Browser to Gemini CLI:
     ```bash
     gemini mcp add local-server <mcp_url> --transport http --scope user
     # Example: gemini mcp add local-server http://127.0.0.1:9239/mcp --transport http --scope user
     ```
   </Tab>
   <Tab title="Codex">
-    Add BrowserOS to OpenAI Codex CLI:
+    Add Posessed Browser to OpenAI Codex CLI:
     ```bash
     codex mcp add browseros <mcp_url> --transport http
     # Example: codex mcp add browseros http://127.0.0.1:9239/mcp --transport http
@@ -85,7 +85,7 @@ Unlike Chrome DevTools MCP which requires setting up debug profiles and running 
     ~/Library/Application Support/Claude/claude_desktop_config.json
     ```
 
-    Add BrowserOS:
+    Add Posessed Browser:
     ```json
     {
       "mcpServers": {
@@ -106,24 +106,24 @@ Unlike Chrome DevTools MCP which requires setting up debug profiles and running 
 Once connected, try these prompts in Claude Code:
 
 ```
-Open my LinkedIn profile in BrowserOS and extract my work experience as JSON
+Open my LinkedIn profile in Posessed Browser and extract my work experience as JSON
 ```
 
 ```
-In BrowserOS, go to localhost:3000, click the login button, and check for console errors
+In Posessed Browser, go to localhost:3000, click the login button, and check for console errors
 ```
 
 ```
-Take a screenshot of the current page in BrowserOS and save it to screenshots/
+Take a screenshot of the current page in Posessed Browser and save it to screenshots/
 ```
 
 ```
-Search my BrowserOS history for "invoice" and list the recent matches
+Search my Posessed Browser history for "invoice" and list the recent matches
 ```
 
 ## Available Tools
 
-BrowserOS exposes 31 tools to MCP clients:
+Posessed Browser exposes 31 tools to MCP clients:
 
 | Category | Tools |
 |----------|-------|
