@@ -3,7 +3,7 @@
 
 # Posessed Browser
 
-### _Let Lilim posess your browser._
+## _Let Lilim posess your browser._
 
 **An open-source, AI-native Chromium fork — built for and bundled with [Lilith Linux](https://github.com/BlancoBAM/Lilith-Linux).**
 
@@ -150,7 +150,7 @@ Quick links:
 
 ## Architecture
 
-```
+```text
 Posessed Browser
 ├── packages/
 │   ├── browseros/              # Chromium build system & patches
