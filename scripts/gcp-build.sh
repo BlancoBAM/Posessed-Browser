@@ -13,8 +13,8 @@
 PROJECT_ID=$(gcloud config get-value project)
 ZONE="us-central1-a"
 INSTANCE_NAME="posessed-browser-builder"
-MACHINE_TYPE="n2d-standard-64" # 64 vCPUs, 256GB RAM for extremely fast Chromium builds
-DISK_SIZE="300GB"              # Chromium src checkout requires ~100GB
+MACHINE_TYPE="n2d-standard-8" # 8 vCPUs, 32GB RAM (Max immediately available quota)
+DISK_SIZE="250GB"             # Chromium src checkout requires ~100GB
 DISK_TYPE="pd-ssd"
 
 echo "========================================================================"
@@ -88,7 +88,7 @@ done
 # ============================================================================
 # COMPILATION
 # ============================================================================
-echo "Starting extremely fast 64-core compilation..."
+echo "Starting 8-core compilation (This will take a few hours)..."
 # Standard BrowserOS build command leverages all available cores
 uv run browseros build
 
@@ -108,7 +108,7 @@ echo "Creating Cloud Storage Bucket for artifacts..."
 gcloud storage buckets create gs://$PROJECT_ID-browser-builds --location=US || true
 
 echo "Provisioning Build VM ($INSTANCE_NAME)..."
-gcloud compute instances create $INSTANCE_NAME \
+if ! gcloud compute instances create $INSTANCE_NAME \
 	--project=$PROJECT_ID \
 	--zone=$ZONE \
 	--machine-type=$MACHINE_TYPE \
@@ -116,11 +116,17 @@ gcloud compute instances create $INSTANCE_NAME \
 	--maintenance-policy=MIGRATE \
 	--provisioning-model=STANDARD \
 	--scopes=https://www.googleapis.com/auth/cloud-platform \
-	--create-disk=auto-delete=yes,boot=yes,device-name=$INSTANCE_NAME,image=projects/debian-cloud/global/images/debian-12-bookworm-v20240213,mode=rw,size=$DISK_SIZE,type=projects/$PROJECT_ID/zones/$ZONE/diskTypes/$DISK_TYPE \
-	--metadata-from-file=startup-script=/tmp/startup.sh
+	--create-disk=auto-delete=yes,boot=yes,device-name=$INSTANCE_NAME,image=projects/debian-cloud/global/images/debian-12-bookworm-v20240312,mode=rw,size=$DISK_SIZE,type=projects/$PROJECT_ID/zones/$ZONE/diskTypes/$DISK_TYPE \
+	--metadata-from-file=startup-script=/tmp/startup.sh; then
+	echo "========================================================================"
+	echo " ERROR: Failed to provision the Build VM."
+	echo " Please check the gcloud error above (e.g., CPU quota limits)."
+	echo "========================================================================"
+	exit 1
+fi
 
 echo "========================================================================"
-echo " Successfully launched the 64-Core Build Server!"
+echo " Successfully launched the 8-Core Build Server!"
 echo " The server is downloading Chromium, patching the internal UI, and building."
 echo " When finished, the VM will auto-delete and the binaries will appear in:"
 echo " https://console.cloud.google.com/storage/browser/$PROJECT_ID-browser-builds"
